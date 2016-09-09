@@ -70,6 +70,8 @@
                     </li>
                     <li><a href="/admin/base_info_list/class_level">班级级别</a>
                     </li>
+                    <li><a href="/admin/course_list">课程信息列表</a>
+                    </li>
                   </ul>
                 </li>
                 <li><a><i class="fa fa-desktop"></i> 上课信息配置 <span class="fa fa-chevron-down"></span></a>

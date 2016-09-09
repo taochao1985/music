@@ -20,7 +20,7 @@ $chuanglan_config['api_balance_query_url'] = 'http://222.73.117.156/msg/QueryBal
 $chuanglan_config['api_account']	= 'yingquaner620';
 
 //创蓝密码 替换成你自己的密码
-$chuanglan_config['api_password']	= 'Tch852013';
+$chuanglan_config['api_password']	= 'Spp85201';
 
 //↑↑↑↑↑↑↑↑↑↑请在这里配置您的基本信息↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 ?>

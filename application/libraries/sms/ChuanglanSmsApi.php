@@ -15,7 +15,7 @@ class ChuanglanSmsApi {
 	function __construct(){
 		define('API_SEND_URL', 'http://222.73.117.156/msg/HttpBatchSendSM');
 		define('API_ACCOUNT', 'yingquaner620');
-		define('API_PASSWORD', 'Tch852013');
+		define('API_PASSWORD', 'Spp85201');
 	}
 	/**
 	 * 发送短信

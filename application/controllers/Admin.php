@@ -1627,20 +1627,10 @@ class Admin extends CI_Controller {
 
             if($course){
                 $data['course'] = $course[0];
-                $store_course = $this->music->select('course_store','*',array('course_id'=>$id));
-                $store_id = array();
-                foreach ($store_course as $key => $value) {
-                    $store_id[] = $value->store_id;
-                }
-                $data['store_id'] = $store_id;
+
             }else{
                 $data['course'] = '';
             }
-            $c = array();
-            if($admin->level){
-              $c['id'] = $admin->store_id;
-            }
-            $data['store'] = $this->music->select('store','*',$c);
             $this->load->view('admin/course_add',$data);
         }
     }

@@ -171,86 +171,375 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 id="about" class="title text-center">About <span>StartUp</span></h1>
-                        <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. laudantium culpa tenetur.</p>
-                        <div class="space"></div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="/asset/images/section-image-1.png" alt="">
-                                <div class="space"></div>
-                            </div>
-                            <div class="col-md-6">
-                                <p>Lorem ipsum dolor sit amet, cadipisicing  sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde fuga error commodi architecto, laudantium culpa tenetur at id, beatae pet.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. adipisicing  sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium,m deserunt.</p>
-                                <ul class="list-unstyled">
-                                    <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Lorem ipsum enimdolor sit amet</li>
-                                    <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Explicabo deleniti neque aliquid</li>
-                                    <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Consectetur adipisicing elit</li>
-                                    <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Lorem ipsum dolor sit amet</li>
-                                    <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Quo issimos molest quibusdam temporibus</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="space"></div>
-                        <h2>Amazing free bootstrap template</h2>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p>Lorem ipsum dolor sit amet, adipisicing  sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde error commodi architecto, laudantium culpa optio corporis quod earumdignissimos eius mollitia et quas officia doloremque.</p>
-                                    <ul class="list-unstyled">
-                                    <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Lorem ipsum enimdolor sit amet</li>
-                                    <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Explicabo deleniti neque aliquid</li>
-                                    <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Consectetur adipisicing elit</li>
-                                    <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Lorem ipsum dolor sit amet</li>
-                                    <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Quo issimos molest quibusdam temporibus</li>
-                                </ul>
-                                <p>Dolores quam magnam aadipisicing  sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde molestias velit eveniet, facere autem saepe autrunt.</p>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading" role="tab" id="headingOne">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    Collapsible Group Item #1
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                            <div class="panel-body">
-                                                Consectetur adipisicing  sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat ntium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earumdignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading" role="tab" id="headingTwo">
-                                            <h4 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    Collapsible Group Item #2
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                            <div class="panel-body">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed, quidem quis praesentium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earum pariatur omnis illo saepe numquam suscipit, nemo placeat ntium, ut unde. Quae sed, incidunt laudantium nesciunt, optio corporis quod earumdignissimos eius mollitia et quas officia doloremque ipsum labore rem deserunt.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading" role="tab" id="headingThree">
-                                            <h4 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                    Collapsible Group Item #3
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                            <div class="panel-body">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi adipisci illo, voluptatum ipsam fuga error commodi architecto, laudantium culpa tenetur at id, beatae placeat deserunt iure quas voluptas fugit eveniet.
-                                            </div>
-                                        </div>
-                                    </div>
+                         <div class="bs-example bs-example-tabs">
+                            <ul id="myTab" class="nav nav-tabs" role="tablist">
+                              <li role="presentation" class=""><a href="#school" id="school-tab" role="tab" data-toggle="tab" aria-controls="school" aria-expanded="true">学校简介</a></li>
+                              <li role="presentation" class="active"><a href="#teachers" role="tab" id="teachers-tab" data-toggle="tab" aria-controls="teachers" aria-expanded="false">教师介绍</a></li>
+                              <li role="presentation" class=""><a href="#student_words" role="tab" id="student_words-tab" data-toggle="tab" aria-controls="student_words" aria-expanded="false">学生的话</a></li>
+                              <li role="presentation" class=""><a href="#parents_words" role="tab" id="parents_words-tab" data-toggle="tab" aria-controls="parents_words" aria-expanded="false">家长的话</a></li>
+                            </ul>
+                            <div id="myTabContent" class="tab-content">
+                              <div role="tabpanel" class="tab-pane fade" id="school" aria-labelledby="school-tab">
+                                 <div class="row">
+                                     <div class="page-content">
+                                            <div class="pic">
+                                        <img src="http://www.rollingmusic.cn/images/page1-1-pic.jpg"></div>
+                                    <p>
+                                        <span lang="EN-US" style="font-size: 10.5pt; font-family: 宋体; color: black; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">&nbsp; &nbsp;Rolling Music</span><span style="font-size: 10.5pt; font-family: 宋体; color: black; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">是一个集音乐教育和演出为一体的音乐机构，由国内大型音乐节创办人及富有教育经验的团队策划，一流的专业乐手任教，致力于推广现代音乐文化，开发及教授音乐理论、欣赏、演奏、即兴创作、乐队合奏的立体化创意课程，使学生敏于审美，敢于表达，精于创造，乐于合作，真正享受音乐的乐趣。</span></p>
+                                    <h4>
+                                        <span style="font-family:tahoma,geneva,sans-serif;"><span style="color:#000;">静安教室</span></span></h4>
+                                    <p>
+                                        <span style="font-family:tahoma,geneva,sans-serif;"><span style="color:#696969;">地址：上海市静安区镇宁路200号欣安大厦 西峰12A</span></span></p>
+                                    <h4>
+                                        <span style="font-family:tahoma,geneva,sans-serif;"><span style="color:#000;">闸北教室</span></span></h4>
+                                    <p>
+                                        <span style="font-family:tahoma,geneva,sans-serif;"><span style="color:#696969;">地址：上海市天目西路218号嘉里不夜城1901室（近民立路）</span></span></p>
+                                    <h4>
+                                        <span style="font-family:tahoma,geneva,sans-serif;"><span style="color:#000;">碧云教室</span></span></h4>
+                                    <p>
+                                        <span style="font-family:tahoma,geneva,sans-serif;"><span style="color:#696969;"><span style="font-size:12px;"><span style="background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">地址：上海市浦东新区碧云社区红枫路</span><span lang="EN-US" style="background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">588</span><span style="background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">号（近明月路）浦东鸿艺会（</span><span lang="EN-US" style="background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">9</span><span style="background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">月开启）</span></span></span></span></p>
+                                    <p>
+                                        <span style="font-family:tahoma,geneva,sans-serif;"><span style="color:#696969;"><br>
+                                        </span></span></p>
+                                    <p>
+                                        <span style="color:#000;"><span style="font-family:tahoma,geneva,sans-serif;">咨询电话：+86 021 6218 0205 &nbsp; +86 177 2111 3650</span></span></p>
+                                    <p>
+                                        <span style="color:#000;"><span style="font-family:tahoma,geneva,sans-serif;">邮箱：apply@rollingmusic.cn</span></span></p>
+
                                 </div>
+                                 </div>
+                              </div>
+                              <div role="tabpanel" class="tab-pane fade  active in" id="teachers" aria-labelledby="teachers-tab">
+                                    <div class="row no-view" data-animation-effect="fadeIn">
+                                        <div class="col-md-12">
+
+                                            <!-- isotope filters start -->
+                                            <div class="filters text-center">
+                                                <ul class="nav nav-pills">
+                                                    <li class="active"><a href="#" data-filter="*">All</a></li>
+                                                    <li><a href="#" data-filter=".guitar">吉他</a></li>
+                                                    <li><a href="#" data-filter=".bass">贝斯</a></li>
+                                                    <li><a href="#" data-filter=".drum">鼓</a></li>
+                                                    <li><a href="#" data-filter=".keyboard">键盘</a></li>
+                                                    <li><a href="#" data-filter=".music-production">音乐制作</a></li>
+                                                    <li><a href="#" data-filter=".other">其他乐器</a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- isotope filters end -->
+
+                                            <!-- portfolio items start -->
+                                            <div class="isotope-container row grid-space-20">
+                                                <div class="col-sm-6 col-md-3 isotope-item guitar bass drum keyboard">
+                                                    <div class="image-box">
+                                                        <div class="overlay-container">
+                                                            <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/page1-2-pic-1.jpg" alt="">
+                                                            <a class="overlay" data-toggle="modal" data-target="#project-1">
+                                                                <i class="fa fa-search-plus"></i>
+
+                                                            </a>
+                                                        </div>
+                                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1">Ben Misterka USA</a>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="project-1" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                                    <h4 class="modal-title" id="project-1-label">Ben Misterka USA</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/page1-2-pic-1.jpg" alt="">
+                                                                            <br/>
+                                                                            <h3>Guitar\Bass\Drum\Keyboard</h3>
+                                                                            <p>BIO
+
+                    Ben Misterka is a American guitarist, composer, and music educator. A versatile musican, Misterka's travels have allowed him to be influenced by music from around the world.  Relocating to Shanghai, China in 2012, he continues to write, perform, and record the music that he loves.
+
+                    Misterka has toured through China, Japan, and the USA, playing with many acclaimed artists, including the unique singer/songwriter Leah Dou (窦靖童) and pop/rock mainstays Yu Quan (羽 泉), RTM(Return to Mongolia), Anhayla, Kimberly Nichole, Joye B. Moore and many others.
+
+                    Notable performances include; Richmond International Jazz Festival, Shanghai JZ Festival in 2013 with New Grasslands, and 2015 with RTM, Ordos World Music Festival- Inner Mongolia and many others.  He has performed at several of the major venues and festivals in Shanghai and around China, including the Mercedes-Benz Mixing Room, Booshkabash, Shanghai World Music festival and many more.  In 2014 he held a 2-month residency at “House of Blues and Jazz” in Shanghai, and later that year was invited to perform on classical guitar with the Shanghai Baroque Chamber Orchestra at the Shanghai Concert Hall.
+
+                    Misterka has played for numerous recording sessions for an array of styles.  He has released 2 self produced records with New Grasslands, and will soon debut an EP of his solo material.  </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal end -->
+                                                </div>
+
+                                                <div class="col-sm-6 col-md-3 isotope-item guitar bass drum keyboard">
+                                                    <div class="image-box">
+                                                        <div class="overlay-container">
+                                                            <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/page1-2-pic-2.jpg" alt="">
+                                                            <a class="overlay" data-toggle="modal" data-target="#project-2">
+                                                                <i class="fa fa-search-plus"></i>
+
+                                                            </a>
+                                                        </div>
+                                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-2">Hans von Meister America </a>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="project-2" tabindex="-1" role="dialog" aria-labelledby="project-2-label" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                                    <h4 class="modal-title" id="project-2-label">Hans von Meister America </h4>
+                                                                </div>
+                                                                <div class="modal-body">
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/page1-2-pic-2.jpg" alt="">
+                                                                            <br/>
+                                                                            <h3>Guitar\Bass\Keyboard\Music Production</h3>
+                                                                            <p> Hans is a guitarist, song-writer, producer, and bassist for several popular bands. He has been producing electronic music since 2000, and began DJ-ing in 2011. He studied Composition and Musical Technology at CU Boulder.
+
+                    He played lead guitar in Iron Virgins from 2013-2014, and was named Best Bassist in the 2014 Shanghai Metal Awards. </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal end -->
+                                                </div>
+
+                                                <div class="col-sm-6 col-md-3 isotope-item guitar bass music-production">
+                                                    <div class="image-box">
+                                                        <div class="overlay-container">
+                                                            <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201601281634552.jpg" alt="">
+                                                            <a class="overlay" data-toggle="modal" data-target="#project-3">
+                                                                <i class="fa fa-search-plus"></i>
+                                                            </a>
+                                                        </div>
+                                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-3">Giulio Perinello Italy</a>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="project-3" tabindex="-1" role="dialog" aria-labelledby="project-3-label" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                                    <h4 class="modal-title" id="project-3-label">Giulio Perinello Italy</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201601281634552.jpg" alt="">
+                                                                            <br/>
+                                                                            <h3>Guitar\Bass\Music Production</h3>
+                                                                            <p>Giulio Perinello was in the North of Italy.
+
+                    His relationship with music began in early childhood, studying bassoon at the Conservatory and later playing electric bass with several bands.
+
+                    In 2010, he graduated from the renowned APM institute of Saluzzo (Italy) with a degree in "Interactive Music Production for Digital Arts."
+
+                    Since then he has been expanding his career in Madrid, working as producer and composer in collaboration with several Spanish and international artists.
+
+                    He released house tracks with Conde Duque record label from Chile, promoting his music as DJ in Madrid, Mexico and Ibiza parties.
+
+                    Constantly exploring new ways to integrate the computer as an instrument in the live shows, he has been playing guitar and bass in multimedia shows in Spain, London and Portugal festivals with his Umami Connection live cinema project.
+
+                    In 2013 he started his activity as computer music teacher, developing successfully courses in important institutions such as European Design Institute of Madrid, teaching complete programs about digital music creation.
+
+                    Now in Shanghai he is working as Dj in many clubs and he started a new live project in collaboration with Chinese musicians, mixing electronic , rock and traditional influences .</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal end -->
+                                                </div>
+
+                                                <div class="col-sm-6 col-md-3 isotope-item guitar bass">
+                                                    <div class="image-box">
+                                                        <div class="overlay-container">
+                                                            <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201604042004541.png" alt="">
+                                                            <a class="overlay" data-toggle="modal" data-target="#project-4">
+                                                                <i class="fa fa-search-plus"></i>
+                                                            </a>
+                                                        </div>
+                                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-4">Cai Zhizheng China</a>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="project-4" tabindex="-1" role="dialog" aria-labelledby="project-4-label" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                                    <h4 class="modal-title" id="project-4-label">Cai Zhizheng China</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201604042004541.png" alt="">
+                                                                            <br/>
+                                                                            <h3>Guitar\Bass</h3>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal end -->
+                                                </div>
+
+                                                <div class="col-sm-6 col-md-3 isotope-item drum music-production">
+                                                    <div class="image-box">
+                                                        <div class="overlay-container">
+                                                            <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201601281636101.jpg" alt="">
+                                                            <a class="overlay" data-toggle="modal" data-target="#project-5">
+                                                                <i class="fa fa-search-plus"></i>
+                                                            </a>
+                                                        </div>
+                                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-5">Sam Gregory England</a>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="project-5" tabindex="-1" role="dialog" aria-labelledby="project-5-label" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                                    <h4 class="modal-title" id="project-5-label">Sam Gregory England</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201601281636101.jpg" alt="">
+                                                                            <br/>
+                                                                            <h3>Drum\Music Production</h3>
+                                                                            <p> Sam started playing the drums at the age of 15.He found his voice in hitting the drums, and that started his life playing in bands. He particularly loves Metal, Drum n Bass, Jazz, Hip Hop, Reggae, and Classical music. He studied music at the Sheffield College and gained a BA hons Popular Music at The University of Huddersfield. He also formed a popular band in UK called Downslide.
+                    He taught drums to different age’s students at The Wreck Room and School of Rock music school, using the Trinity Rock School and London College of Music curriculums.
+                    He ran band workshops, which were designed to promote interest with the younger ages, and develop skills and band communication with the older ages.</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal end -->
+                                                </div>
+
+                                                <div class="col-sm-6 col-md-3 isotope-item keyboard">
+                                                    <div class="image-box">
+                                                        <div class="overlay-container">
+                                                            <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201604042002352.png" alt="">
+                                                            <a class="overlay" data-toggle="modal" data-target="#project-6">
+                                                                <i class="fa fa-search-plus"></i>
+                                                            </a>
+                                                        </div>
+                                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-6">Yeye China</a>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="project-6" tabindex="-1" role="dialog" aria-labelledby="project-6-label" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                                    <h4 class="modal-title" id="project-6-label">Yeye China</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201604042002352.png" alt="">
+                                                                            <br/>
+                                                                            <h3>Keyboard</h3>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal end -->
+                                                </div>
+
+                                                <div class="col-sm-6 col-md-3 isotope-item mobile-apps">
+                                                    <div class="image-box">
+                                                        <div class="overlay-container">
+                                                            <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201604042009012.png" alt="">
+                                                            <a class="overlay" data-toggle="modal" data-target="#project-7">
+                                                                <i class="fa fa-search-plus"></i>
+                                                                <span>Site Building</span>
+                                                            </a>
+                                                        </div>
+                                                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-7">Krystal Lew The United States</a>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="project-7" tabindex="-1" role="dialog" aria-labelledby="project-7-label" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                                    <h4 class="modal-title" id="project-7-label">Krystal Lew The United States</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201604042009012.png" alt="">
+                                                                            <br/>
+                                                                            <h3>Other</h3>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Modal end -->
+                                                </div>
+
+                                            </div>
+                                            <!-- portfolio items end -->
+
+                                        </div>
+                                    </div>
+
+                              </div>
+                              <div role="tabpanel" class="tab-pane fade" id="student_words" aria-labelledby="student_words-tab">
+                                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                              </div>
+                              <div role="tabpanel" class="tab-pane fade" id="parents_words" aria-labelledby="parents_words-tab">
+                                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                              </div>
+
                             </div>
-                        </div>
+                          </div>
                     </div>
                 </div>
             </div>
@@ -383,335 +672,7 @@
           </div>
 </div>
 </section>
-        <!-- section start -->
-        <section class="section secPadding">
-            <div class="container">
-                <h1 class="text-center title" id="teachers">教师介绍</h1>
-                <div class="separator"></div>
-                <!--p class="lead text-center">Lorem ipsum dolor sit amet laudantium molestias simi Quisquam incidunt.</p-->
-                <br>
-                <div class="row no-view" data-animation-effect="fadeIn">
-                    <div class="col-md-12">
 
-                        <!-- isotope filters start -->
-                        <div class="filters text-center">
-                            <ul class="nav nav-pills">
-                                <li class="active"><a href="#" data-filter="*">All</a></li>
-                                <li><a href="#" data-filter=".guitar">吉他</a></li>
-                                <li><a href="#" data-filter=".bass">贝斯</a></li>
-                                <li><a href="#" data-filter=".drum">鼓</a></li>
-                                <li><a href="#" data-filter=".keyboard">键盘</a></li>
-                                <li><a href="#" data-filter=".music-production">音乐制作</a></li>
-                                <li><a href="#" data-filter=".other">其他乐器</a></li>
-                            </ul>
-                        </div>
-                        <!-- isotope filters end -->
-
-                        <!-- portfolio items start -->
-                        <div class="isotope-container row grid-space-20">
-                            <div class="col-sm-6 col-md-3 isotope-item guitar bass drum keyboard">
-                                <div class="image-box">
-                                    <div class="overlay-container">
-                                        <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/page1-2-pic-1.jpg" alt="">
-                                        <a class="overlay" data-toggle="modal" data-target="#project-1">
-                                            <i class="fa fa-search-plus"></i>
-
-                                        </a>
-                                    </div>
-                                    <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1">Ben Misterka USA</a>
-                                </div>
-                                <!-- Modal -->
-                                <div class="modal fade" id="project-1" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                <h4 class="modal-title" id="project-1-label">Ben Misterka USA</h4>
-                                            </div>
-                                            <div class="modal-body">
-
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/page1-2-pic-1.jpg" alt="">
-                                                        <br/>
-                                                        <h3>Guitar\Bass\Drum\Keyboard</h3>
-                                                        <p>BIO
-
-Ben Misterka is a American guitarist, composer, and music educator. A versatile musican, Misterka's travels have allowed him to be influenced by music from around the world.  Relocating to Shanghai, China in 2012, he continues to write, perform, and record the music that he loves.
-
-Misterka has toured through China, Japan, and the USA, playing with many acclaimed artists, including the unique singer/songwriter Leah Dou (窦靖童) and pop/rock mainstays Yu Quan (羽 泉), RTM(Return to Mongolia), Anhayla, Kimberly Nichole, Joye B. Moore and many others.
-
-Notable performances include; Richmond International Jazz Festival, Shanghai JZ Festival in 2013 with New Grasslands, and 2015 with RTM, Ordos World Music Festival- Inner Mongolia and many others.  He has performed at several of the major venues and festivals in Shanghai and around China, including the Mercedes-Benz Mixing Room, Booshkabash, Shanghai World Music festival and many more.  In 2014 he held a 2-month residency at “House of Blues and Jazz” in Shanghai, and later that year was invited to perform on classical guitar with the Shanghai Baroque Chamber Orchestra at the Shanghai Concert Hall.
-
-Misterka has played for numerous recording sessions for an array of styles.  He has released 2 self produced records with New Grasslands, and will soon debut an EP of his solo material.  </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Modal end -->
-                            </div>
-
-                            <div class="col-sm-6 col-md-3 isotope-item guitar bass drum keyboard">
-                                <div class="image-box">
-                                    <div class="overlay-container">
-                                        <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/page1-2-pic-2.jpg" alt="">
-                                        <a class="overlay" data-toggle="modal" data-target="#project-2">
-                                            <i class="fa fa-search-plus"></i>
-
-                                        </a>
-                                    </div>
-                                    <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-2">Hans von Meister America </a>
-                                </div>
-                                <!-- Modal -->
-                                <div class="modal fade" id="project-2" tabindex="-1" role="dialog" aria-labelledby="project-2-label" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                <h4 class="modal-title" id="project-2-label">Hans von Meister America </h4>
-                                            </div>
-                                            <div class="modal-body">
-
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/page1-2-pic-2.jpg" alt="">
-                                                        <br/>
-                                                        <h3>Guitar\Bass\Keyboard\Music Production</h3>
-                                                        <p> Hans is a guitarist, song-writer, producer, and bassist for several popular bands. He has been producing electronic music since 2000, and began DJ-ing in 2011. He studied Composition and Musical Technology at CU Boulder.
-
-He played lead guitar in Iron Virgins from 2013-2014, and was named Best Bassist in the 2014 Shanghai Metal Awards. </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Modal end -->
-                            </div>
-
-                            <div class="col-sm-6 col-md-3 isotope-item guitar bass music-production">
-                                <div class="image-box">
-                                    <div class="overlay-container">
-                                        <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201601281634552.jpg" alt="">
-                                        <a class="overlay" data-toggle="modal" data-target="#project-3">
-                                            <i class="fa fa-search-plus"></i>
-                                        </a>
-                                    </div>
-                                    <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-3">Giulio Perinello Italy</a>
-                                </div>
-                                <!-- Modal -->
-                                <div class="modal fade" id="project-3" tabindex="-1" role="dialog" aria-labelledby="project-3-label" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                <h4 class="modal-title" id="project-3-label">Giulio Perinello Italy</h4>
-                                            </div>
-                                            <div class="modal-body">
-
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201601281634552.jpg" alt="">
-                                                        <br/>
-                                                        <h3>Guitar\Bass\Music Production</h3>
-                                                        <p>Giulio Perinello was in the North of Italy.
-
-His relationship with music began in early childhood, studying bassoon at the Conservatory and later playing electric bass with several bands.
-
-In 2010, he graduated from the renowned APM institute of Saluzzo (Italy) with a degree in "Interactive Music Production for Digital Arts."
-
-Since then he has been expanding his career in Madrid, working as producer and composer in collaboration with several Spanish and international artists.
-
-He released house tracks with Conde Duque record label from Chile, promoting his music as DJ in Madrid, Mexico and Ibiza parties.
-
-Constantly exploring new ways to integrate the computer as an instrument in the live shows, he has been playing guitar and bass in multimedia shows in Spain, London and Portugal festivals with his Umami Connection live cinema project.
-
-In 2013 he started his activity as computer music teacher, developing successfully courses in important institutions such as European Design Institute of Madrid, teaching complete programs about digital music creation.
-
-Now in Shanghai he is working as Dj in many clubs and he started a new live project in collaboration with Chinese musicians, mixing electronic , rock and traditional influences .</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Modal end -->
-                            </div>
-
-                            <div class="col-sm-6 col-md-3 isotope-item guitar bass">
-                                <div class="image-box">
-                                    <div class="overlay-container">
-                                        <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201604042004541.png" alt="">
-                                        <a class="overlay" data-toggle="modal" data-target="#project-4">
-                                            <i class="fa fa-search-plus"></i>
-                                        </a>
-                                    </div>
-                                    <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-4">Cai Zhizheng China</a>
-                                </div>
-                                <!-- Modal -->
-                                <div class="modal fade" id="project-4" tabindex="-1" role="dialog" aria-labelledby="project-4-label" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                <h4 class="modal-title" id="project-4-label">Cai Zhizheng China</h4>
-                                            </div>
-                                            <div class="modal-body">
-
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201604042004541.png" alt="">
-                                                        <br/>
-                                                        <h3>Guitar\Bass</h3>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Modal end -->
-                            </div>
-
-                            <div class="col-sm-6 col-md-3 isotope-item drum music-production">
-                                <div class="image-box">
-                                    <div class="overlay-container">
-                                        <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201601281636101.jpg" alt="">
-                                        <a class="overlay" data-toggle="modal" data-target="#project-5">
-                                            <i class="fa fa-search-plus"></i>
-                                        </a>
-                                    </div>
-                                    <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-5">Sam Gregory England</a>
-                                </div>
-                                <!-- Modal -->
-                                <div class="modal fade" id="project-5" tabindex="-1" role="dialog" aria-labelledby="project-5-label" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                <h4 class="modal-title" id="project-5-label">Sam Gregory England</h4>
-                                            </div>
-                                            <div class="modal-body">
-
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201601281636101.jpg" alt="">
-                                                        <br/>
-                                                        <h3>Drum\Music Production</h3>
-                                                        <p> Sam started playing the drums at the age of 15.He found his voice in hitting the drums, and that started his life playing in bands. He particularly loves Metal, Drum n Bass, Jazz, Hip Hop, Reggae, and Classical music. He studied music at the Sheffield College and gained a BA hons Popular Music at The University of Huddersfield. He also formed a popular band in UK called Downslide.
-He taught drums to different age’s students at The Wreck Room and School of Rock music school, using the Trinity Rock School and London College of Music curriculums.
-He ran band workshops, which were designed to promote interest with the younger ages, and develop skills and band communication with the older ages.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Modal end -->
-                            </div>
-
-                            <div class="col-sm-6 col-md-3 isotope-item keyboard">
-                                <div class="image-box">
-                                    <div class="overlay-container">
-                                        <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201604042002352.png" alt="">
-                                        <a class="overlay" data-toggle="modal" data-target="#project-6">
-                                            <i class="fa fa-search-plus"></i>
-                                        </a>
-                                    </div>
-                                    <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-6">Yeye China</a>
-                                </div>
-                                <!-- Modal -->
-                                <div class="modal fade" id="project-6" tabindex="-1" role="dialog" aria-labelledby="project-6-label" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                <h4 class="modal-title" id="project-6-label">Yeye China</h4>
-                                            </div>
-                                            <div class="modal-body">
-
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201604042002352.png" alt="">
-                                                        <br/>
-                                                        <h3>Keyboard</h3>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Modal end -->
-                            </div>
-
-                            <div class="col-sm-6 col-md-3 isotope-item mobile-apps">
-                                <div class="image-box">
-                                    <div class="overlay-container">
-                                        <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201604042009012.png" alt="">
-                                        <a class="overlay" data-toggle="modal" data-target="#project-7">
-                                            <i class="fa fa-search-plus"></i>
-                                            <span>Site Building</span>
-                                        </a>
-                                    </div>
-                                    <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-7">Krystal Lew The United States</a>
-                                </div>
-                                <!-- Modal -->
-                                <div class="modal fade" id="project-7" tabindex="-1" role="dialog" aria-labelledby="project-7-label" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                <h4 class="modal-title" id="project-7-label">Krystal Lew The United States</h4>
-                                            </div>
-                                            <div class="modal-body">
-
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <img src="http://www.rollingmusic.cn/UploadFiles/Teacher/201604042009012.png" alt="">
-                                                        <br/>
-                                                        <h3>Other</h3>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Modal end -->
-                            </div>
-
-                        </div>
-                        <!-- portfolio items end -->
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- section end -->
 <!-- section start -->
         <section class="default-bg secPadding">
 
@@ -953,20 +914,20 @@ He ran band workshops, which were designed to promote interest with the younger 
 
         </footer>
         <!-- footer end -->
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel"><?php echo $this->lang->line('register');?></h4>
-      </div>
-        <?php $this->load->view('front/register_form',array('success_url'=>base_url().'student/index/'));?>
-    <div class="modal-footer">
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="exampleModalLabel"><?php echo $this->lang->line('register');?></h4>
+          </div>
+            <?php $this->load->view('front/register_form',array('success_url'=>base_url().'student/index/'));?>
+        <div class="modal-footer">
 
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
         <?php $this->load->view('front/login_form');?>
         <!-- JavaScript -->
@@ -979,6 +940,13 @@ He ran band workshops, which were designed to promote interest with the younger 
 
         <!-- Custom Scripts -->
         <script type="text/javascript" src="/asset/js/custom.js"></script>
-
+        <script>
+        $(document).ready(function(){
+            $('#myTab a').click(function (e) {
+              e.preventDefault()
+              $(this).tab('show')
+            })
+        })
+        </script>
     </body>
 </html>
