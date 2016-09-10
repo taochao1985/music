@@ -597,6 +597,8 @@ class Admin extends CI_Controller {
             $name = trim($_POST['name']);
             $en_name = trim($_POST['en_name']);
             $username = trim($_POST['username']);
+            $en_country = trim($_POST['en_country']);
+            $country = trim($_POST['country']);
             $email = trim($_POST['email']);
 
             $mobile_check = $this->music->select('teacher','id',array('mobile'=>$mobile));
@@ -621,6 +623,8 @@ class Admin extends CI_Controller {
                     'name'=>$name,
                     'en_name'=>$en_name,
                     'username'=>$username,
+                    'en_country'=>$en_country,
+                    'country'=>$country,
                     'email'=>$email
                 );
             if($password){
@@ -1088,6 +1092,41 @@ class Admin extends CI_Controller {
             }
 
             $this->load->view('admin/first_follow',$data);
+        }
+    }
+
+    function brief_info(){
+        $this->top();
+        $type = $this->uri->segment(3);
+        if($_POST){
+            $config = $this->music->select('brief_info','*',array('cate'=>$type));
+            $desc = trim($_POST['desc']);
+            $en_desc = trim($_POST['en_desc']);
+            $type = trim($_POST['type']);
+            $data_array = array('cate'=>$type,'en_desc'=>$en_desc,'desc'=>trim($_POST['desc']));
+            if ($config){
+                $re = $this->music->update('brief_info',$data_array,array('cate'=>$type));
+            }else{
+                $re = $this->music->insert('brief_info',$data_array);
+
+            }
+            if ($re){
+                $result = array('success'=>'yes','msg'=>'操作成功');
+            }else{
+                $result = array('success'=>'no');
+            }
+            echo json_encode($result);exit;
+
+        }else{
+            $config = $this->music->select('brief_info','*',array('cate'=>$type));
+
+            if($config){
+                $data['brief_info'] = $config[0];
+            }else{
+                $data['brief_info'] = '';
+            }
+            $data['type'] = $type;
+            $this->load->view('admin/brief_info',$data);
         }
     }
 
@@ -1588,6 +1627,56 @@ class Admin extends CI_Controller {
         }
     }
 
+    function event_add(){
+        $admin = $this->top();
+        if($_POST){
+            $id    = trim($_POST['id']);
+            $name = trim($_POST['name']);
+            $en_name = trim($_POST['en_name']);
+            $desc = trim($_POST['desc']);
+            $en_desc = trim($_POST['en_desc']);
+            $display_order = trim($_POST['display_order']);
+
+            $data_array = array(
+                                'en_name'=>$en_name,
+                                'name'=>$name,
+                                'desc'=>$desc,
+                                'en_desc'=>$en_desc,
+                                'display_order'=>$display_order
+                                );
+            if ($id){
+                $re = $this->music->update('event',$data_array,array('id'=>$id));
+
+            }else{
+                $data_array['createtime'] = date('Y-m-d H:i:s');
+                $re = $this->music->insert('event',$data_array);
+            }
+            if ($re){
+                $result = array('success'=>'yes','msg'=>'操作成功');
+            }else{
+                $result = array('success'=>'no');
+            }
+            echo json_encode($result);exit;
+
+        }else{
+            $id = $this->uri->segment(3);
+            $event = $this->music->select('event','*',array('id'=>$id));
+
+            if($event){
+                $data['event'] = $event[0];
+
+            }else{
+                $data['event'] = '';
+            }
+            $this->load->view('admin/event_add',$data);
+        }
+    }
+
+    function event_list(){
+        $admin = $this->top();
+        $data['event'] = $this->music->select('event','*');
+        $this->load->view('admin/event_list',$data);
+    }
 
 
     function course_add(){
@@ -1595,26 +1684,39 @@ class Admin extends CI_Controller {
         if($_POST){
             $id    = trim($_POST['id']);
             $name = trim($_POST['name']);
-            $start_date = trim($_POST['start_date']);
-            $end_date = trim($_POST['end_date']);
-            $course_num = trim($_POST['course_num']);
-            $money = trim($_POST['money']);
-            $store_id = rtrim($_POST['store_id'],',');
-            $remark = trim($_POST['remark']);
-
-            $data_array = array('start_date'=>$start_date,'name'=>$name,'end_date'=>$end_date,'money'=>$money,'course_num'=>$course_num,'remark'=>$remark);
+            $en_name = trim($_POST['en_name']);
+            $desc = trim($_POST['desc']);
+            $en_desc = trim($_POST['en_desc']);
+            $display_order = trim($_POST['display_order']);
+            $recommand_pic = trim($_POST['recommand_pic']);
+            $en_recommand_pic = rtrim($_POST['en_recommand_pic']);
+            $pdf_name = trim($_POST['pdf_name']);
+            $en_pdf_name = trim($_POST['en_pdf_name']);
+            $pdf = trim($_POST['pdf']);
+            $en_pdf = trim($_POST['en_pdf']);
+            $is_top = intval($_POST['is_top']);
+            $data_array = array(
+                                'en_name'=>$en_name,
+                                'name'=>$name,
+                                'desc'=>$desc,
+                                'en_desc'=>$en_desc,
+                                'display_order'=>$display_order,
+                                'recommand_pic'=>$recommand_pic,
+                                'en_recommand_pic'=>$en_recommand_pic,
+                                'pdf_name'=>$pdf_name,
+                                'en_pdf_name'=>$en_pdf_name,
+                                'pdf'=>$pdf,
+                                'en_pdf'=>$en_pdf,
+                                'is_top' => $is_top
+                                );
             if ($id){
                 $re = $this->music->update('course',$data_array,array('id'=>$id));
-                $re = $id;
+
             }else{
+                $data_array['createtime'] = date('Y-m-d H:i:s');
                 $re = $this->music->insert('course',$data_array);
             }
             if ($re){
-                $this->music->delete('course_store',array('course_id'=>$re));
-                $store_id = explode(',', $store_id);
-                foreach($store_id as $k=>$v){
-                    $this->music->insert('course_store',array('course_id'=>$re,'store_id'=>$v));
-                }
                 $result = array('success'=>'yes','msg'=>'操作成功');
             }else{
                 $result = array('success'=>'no');
@@ -1637,34 +1739,7 @@ class Admin extends CI_Controller {
 
     function course_list(){
         $admin = $this->top();
-        $where = '';
-        $course_id = '';
-        if($admin->level){
-           $course_store = $this->music->select('course_store','course_id',array('store_id'=>$admin->store_id));
-           if($course_store){
-              foreach($course_store as $k=>$v){
-                $course_id.=$v->course_id.',';
-              }
-              $course_id = rtrim($course_id,',');
-              $where.=" where id in (".$course_id.")";
-           }
-        }
-
-        $total = $this->music->personal_select("select count(*) as count from course ".$where);
-        $total = $total[0]->count;
-        $page = $this->uri->segment(3);
-
-        $perpage = PERPAGE;
-        if($page==""){
-          $page=1;
-        }
-        $start = ($page-1)*$perpage;
-        $data['admin'] = $admin;
-        $data['total'] = ceil($total/$perpage);
-        $data['start']=$start;
-        $data['current_page'] = $page;
-        $course = $this->music->personal_select("select * from course ".$where." order by id desc limit ".$start.",".$perpage);//select('course','*',array(),$perpage,$start);
-        $data['course'] = $course;
+        $data['course'] = $this->music->select('course','*');
         $this->load->view('admin/course_list',$data);
     }
 

@@ -171,7 +171,6 @@ class Music extends CI_Model {
     function insert($table,$data){
        $result = $this->db->insert($table,$data);
        $id = $this->db->insert_id();
-error_log(print_r($this->db->last_query(),true),3,'/home/www/alip.txt');
        return $id;
     }
 
@@ -224,12 +223,6 @@ error_log(print_r($this->db->last_query(),true),3,'/home/www/alip.txt');
 
     function update($table,$data,$cond){
        $result = $this->db->update($table,$data,$cond);
-       if($table == 'order'){
-       //    error_log(print_r($this->db->last_query(),true),3,'/home/www/alipay3.txt');
-       }
-       error_log(print_r($this->db->last_query(),true),3,'/home/www/alipay3.txt');
-       //echo $this->db->last_query()."<br/>";exit;
-    //   error_log(print_r($this->db->last_query(),true),3,'/home/www/store/sql2.txt');
 
        return $result;
     }

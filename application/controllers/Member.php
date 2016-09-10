@@ -60,14 +60,12 @@ class Student extends CI_Controller {
 
         require_once(APPPATH.'libraries/wechat_pay/WxPayPubHelper.php');
 
-        error_log(print_r($GLOBALS['HTTP_RAW_POST_DATA'],true),3,'/home/www/log.txt');
         //使用通用通知接口
         $notify = new Notify_pub('wx1b82e825e4249ca6','1347593801','e10adc3949ba59abbe56e057f20f883e','45a7ef3de079b0d446249a8f68978b49');
         //存储微信的回调
         $xml = $GLOBALS['HTTP_RAW_POST_DATA'];
         $notify->saveData($xml);
 
-        error_log(print_r($notify,true),3,'/home/www/notify.txt');
         //验证签名，并回应微信。
         //对后台通知交互时，如果微信收到商户的应答不是成功或超时，微信认为通知失败，
         //微信会通过一定的策略（如30分钟共8次）定期重新发起通知，

@@ -72,6 +72,14 @@
                     </li>
                     <li><a href="/admin/course_list">课程信息列表</a>
                     </li>
+                    <li><a href="/admin/event_list">活动信息列表</a>
+                    </li>
+                    <li><a href="/admin/brief_info/school">学校简介</a>
+                    </li>
+                    <li><a href="/admin/brief_info/student_words">学生的话</a>
+                    </li>
+                    <li><a href="/admin/brief_info/parents_words">家长的话</a>
+                    </li>
                   </ul>
                 </li>
                 <li><a><i class="fa fa-desktop"></i> 上课信息配置 <span class="fa fa-chevron-down"></span></a>

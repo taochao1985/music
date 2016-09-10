@@ -7,6 +7,7 @@ class Front extends CI_Controller {
     {
         parent::__construct();
         $session_language = $this->session->userdata('user_language')?$this->session->userdata('user_language'):'chinese';
+        $this->_session_language = $session_language;
         $this->load->model("music");
         $this->lang->load('page_lang', $session_language);
     }
@@ -28,7 +29,41 @@ class Front extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('front/index');
+        if($this->_session_language == 'chinese'){
+            $brief_info_field = 'desc';
+            $base_field = 'name as display_name,en_name';
+            $teacher_fields = 'name,desc,thumb,instrument,id,country';
+            $course_fields = 'name, desc, recommand_pic, display_order,id';
+
+        }else{
+            $brief_info_field = 'en_desc as desc';
+            $base_field = 'en_name as display_name,en_name';
+            $teacher_fields = 'en_name  as name,en_desc as desc,thumb,instrument,id,en_country as country';
+            $course_fields = 'en_name as name, en_desc as desc, en_recommand_pic as recommand_pic, display_order,id';
+        }
+
+        $data['course_info'] = $this->music->select('course',$course_fields,'','','',array('display_order'=>'asc'));
+        $data['instrument'] = $this->music->select('base_info',$base_field,array('type' => 'instrument'));
+        $teachers = $this->music->select('teacher',$teacher_fields);
+        foreach($teachers as $k=>$v){
+
+            $t_instrument = explode(',' ,$v->instrument);
+            $instrument = array();
+            foreach ($t_instrument as $key => $value) {
+                $tt_instrument = $this->music->select('base_info',$base_field,array('id' => $value));
+                if($tt_instrument){
+                    $instrument[] = $tt_instrument[0];
+                }
+            }
+            $teachers[$k]->instrument_info = $instrument;
+        }
+        //echo '<pre>';print_r($teachers);exit;
+        $data['teachers']      = $teachers;
+        $data['school_brief']  = $this->music->select('brief_info',$brief_info_field,array('cate'=>'school'));
+        $data['student_words'] = $this->music->select('brief_info',$brief_info_field,array('cate'=>'student_words'));
+        $data['parents_words'] = $this->music->select('brief_info',$brief_info_field,array('cate'=>'parents_words'));
+
+        $this->load->view('front/index',$data);
 	}
 
 

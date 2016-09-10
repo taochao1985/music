@@ -110,3 +110,13 @@ $lang['wrong_captcha']       = '验证码错误或已失效';
 $lang['find_password']       = '忘记密码';
 $lang['edit_success']        = '成功修改';
 $lang['mobile_not_exist']    = '手机号码不存在！';
+$lang['school_brief']        = '学校简介';
+$lang['teacher_brief']       = '教师介绍';
+$lang['student_brief']       = '学生的话';
+$lang['parents_brief']       = '家长的话';
+$lang['course_brief']        = '课程介绍';
+
+
+
+
+

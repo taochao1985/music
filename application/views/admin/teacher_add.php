@@ -39,6 +39,21 @@
                     </div>
 
                     <div class="item form-group">
+                      <label class="control-label col-md-2 col-sm-2 col-xs-12" for="field_one">来自(CH)
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="country" name="country" required="required" value="<?php if($teacher){echo $teacher->country;}?>" class="form-control col-md-7 col-xs-12">
+                      </div>
+                    </div>
+                    <div class="item form-group">
+                      <label class="control-label col-md-2 col-sm-2 col-xs-12" for="field_one">来自(EN)
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="en_country" name="en_country" required="required" value="<?php if($teacher){echo $teacher->en_country;}?>" class="form-control col-md-7 col-xs-12">
+                      </div>
+                    </div>
+
+                    <div class="item form-group">
                       <label class="control-label col-md-2 col-sm-2 col-xs-12" for="field_one">邮件
                       </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
@@ -207,6 +222,8 @@ $('#file_upload').each(function(){
         var submitData={
           	name:$("input[name='name']",$form).val(),
             en_name:$("input[name='en_name']",$form).val(),
+            country:$("input[name='country']",$form).val(),
+            en_country:$("input[name='en_country']",$form).val(),
             username:$("input[name='username']",$form).val(),
             email:$("input[name='email']",$form).val(),
           	instrument:instrument_id,

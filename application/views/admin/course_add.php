@@ -60,12 +60,19 @@
                       </div>
                     </div>
                     <div class="item form-group">
+                      <label class="control-label col-md-2 col-sm-2 col-xs-12" for="field_one">是否置顶
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="checkbox" id="is_top" name="is_top" <?php if($course&&$course->is_top){?> checked="checked" <?php }?> >
+                      </div>
+                    </div>
+                    <div class="item form-group">
                         <label class="control-label col-md-2 col-sm-2 col-xs-12">首页推荐照片(189*189)CN</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="cover-area">
                                 <div class="cover-hd">
-                                    <input class="file_upload" class="file_upload" name="file_upload" type="file" />
-                                    <input class="hidden_input" id="recommand_pic" value="<?php if ($course){ echo $course->recommand_pic;}?>" name="recommand_pic" type="hidden" />
+                                    <input class="file_upload" name="file_upload" type="file" id="recommand_pic"/>
+                                    <input class="hidden_input" id="recommand_pic_input" value="<?php if ($course){ echo $course->recommand_pic;}?>" name="recommand_pic" type="hidden" />
                                 </div>
                                 <p class="imgArea" class="cover-bd" <?php if(!$course){?>style="display: none;"<?php }?>>
                                 <img src="<?php if ($course){ echo $course->recommand_pic;}?>" class="img">
@@ -80,13 +87,49 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="cover-area">
                                 <div class="cover-hd">
-                                    <input class="file_upload" class="file_upload" name="file_upload" type="file" />
-                                    <input class="hidden_input" id="en_recommand_pic" value="<?php if ($course){ echo $course->en_recommand_pic;}?>" name="en_recommand_pic" type="hidden" />
+                                    <input class="file_upload" name="file_upload" type="file" id="en_recommand_pic"/>
+                                    <input class="hidden_input" id="en_recommand_pic_input" value="<?php if ($course){ echo $course->en_recommand_pic;}?>" name="en_recommand_pic" type="hidden" />
                                 </div>
                                 <p class="imgArea" class="cover-bd" <?php if(!$course){?>style="display: none;"<?php }?>>
                                 <img src="<?php if ($course){ echo $course->en_recommand_pic;}?>" class="img">
                                 <a href="javascript:;" class="vb cover-del" class="delImg">删除</a>
                                 </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12">下载PDF(CN)</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="cover-area">
+                                <div class="cover-hd">
+                                    <input class="file_upload" name="pdf_upload" type="file" id="pdf"/>
+                                    <input class="hidden_input" id="pdf_input" value="<?php if ($course){ echo $course->recommand_pic;}?>" name="pdf" type="hidden" />
+                                    <input class="file_name" id="pdf_input_name" value="<?php if ($course){ echo $course->pdf_name;}?>" name="pdf_name" type="hidden" />
+                                </div>
+                                <div class="imgArea" class="cover-bd" <?php if(!$course){?>style="display: none;"<?php }?>>
+                                  <div class="name_div pull-left"><?php if ($course){ echo $course->pdf_name;}?></div>
+                                  <a href="javascript:;" class="vb cover-del pull-left delImg">删除</a>
+                                  <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12">下载PDF(EN)</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="cover-area">
+                                <div class="cover-hd">
+                                    <input class="file_upload" name="pdf_upload" type="file" id="en_pdf"/>
+                                    <input class="hidden_input" id="en_pdf_input" value="<?php if ($course){ echo $course->en_recommand_pic;}?>" name="en_pdf" type="hidden" />
+                                    <input class="file_name" id="en_pdf_input_name" value="<?php if ($course){ echo $course->en_pdf_name;}?>" name="en_pdf_name" type="hidden" />
+                                </div>
+                                <div class="imgArea" class="cover-bd" <?php if(!$course){?>style="display: none;"<?php }?> >
+                                  <div class="name_div  pull-left"><?php if ($course){ echo $course->en_pdf_name;}?></div>
+                                  <a href="javascript:;" class="vb cover-del pull-left delImg">删除</a>
+                                  <div class="clearfix"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -110,45 +153,33 @@
             var $fileInput = $(this);
             var $cont =  $fileInput.closest(".cover-area");
             var name = $fileInput.attr("name");
+
             $fileInput.uploadify({
                 'swf'      : '/static/swf/uploadify.swf',
                 'uploader' : '/uploads.php',
                 'onUploadSuccess' : function(file,data,response)  {
                     var jsonData = eval("("+data+")");
-                    $(".cover .i-img").attr("src",jsonData.fileUrl).show();
-                    $cont.find(".imgArea").show().find(" #img").attr("src",jsonData.fileUrl);
-                    $cond.find(".hidden_input").val(jsonData.fileUrl);
-                    $(".default-tip").hide();
-                }
 
+                    $cont.find(".hidden_input").val(jsonData.fileUrl);
+                    $cont.find(".file_name").val(jsonData.fileName);
+                    $(".default-tip").hide();
+                    if(name == 'pdf_upload'){
+                      $cont.find(".imgArea").show().find(".name_div").html(jsonData.fileName);
+                    }else{
+                      $cont.find(".imgArea").show().find("img").attr("src",jsonData.fileUrl);
+                    }
+                }
             });
         });
-     $(".msg-editer #title").bind("keyup",function(){
-         $(".i-title").text($(this).val());
-     });
-     $(".msg-editer #summary").bind("keyup",function(){
-         $(".msg-text").text($(this).val());
-     });
-     $('#desc-block-link').click(function(){
-         $('#desc-block').show();
-         $(this).hide();
-     });
-     $('#url-block-link').click(function(){
-         $('#url-block').show();
-         $(this).hide();
-     });
+
      $(".delImg").click(function(){
          $(".default-tip").show();
          var p = $(this).parents(".cover-area");
          p.find('.imgArea').hide();
-         p.find(".hidden_input").val('');
+         p.find(".hidden_input,.file_name").val('');
          $(".cover .i-img").hide();
      });
-     $("#cancel-btn").click(function(event){
-         event.stopPropagation();
-         location.href = "/main/materials_index";
-         return ;
-     });
+
     $('form').submit(function(e) {
       e.preventDefault();
       var submit = true;
@@ -159,30 +190,24 @@
 
       $form = $('#demo-form');
       if (submit){
-      if($("#coverurl").val() == ''){
-            show_stack_modal('error','请上传头像');
-            return false;
-        }
-
-      var instrument_id='';
-      $("input[type='checkbox']:checked").each(function(){
-         instrument_id+= $(this).val()+',';
-      })
+        var is_top = 0;
+          if($("#is_top").prop('checked')){
+            is_top = 1;
+          }
         var submitData={
             name:$("input[name='name']",$form).val(),
             en_name:$("input[name='en_name']",$form).val(),
-            username:$("input[name='username']",$form).val(),
-            email:$("input[name='email']",$form).val(),
-            instrument:instrument_id,
-            gender:$("input[name='gender']:checked",$form).val(),
-            password:$("input[name='password']",$form).val(),
-            mobile:$("input[name='mobile']",$form).val(),
-            email:$("input[name='email']",$form).val(),
-            thumb:$("input[name='coverurl']", $form).val(),
-            lang:$("input[name='lang']", $form).val(),
+            display_order:$("input[name='display_order']",$form).val(),
+            recommand_pic:$("input[name='recommand_pic']",$form).val(),
+            en_recommand_pic:$("input[name='en_recommand_pic']",$form).val(),
+            pdf:$("input[name='pdf']",$form).val(),
+            pdf_name:$("input[name='pdf_name']",$form).val(),
+            en_pdf:$("input[name='en_pdf']",$form).val(),
+            en_pdf_name:$("input[name='en_pdf_name']",$form).val(),
             desc:$.trim(desc.document.getBody().getHtml()),
             en_desc:$.trim(en_desc.document.getBody().getHtml()),
             id:$("input[name='course_id']",$form).val(),
+            is_top : is_top
         };
          $.post('/admin/course_add',submitData,function(data){
 

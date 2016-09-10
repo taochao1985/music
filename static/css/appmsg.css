@@ -411,3 +411,6 @@ body{
 	float: left;
 	margin-left: 0 !important;
 }
+.imgArea .img{
+    width: 100px;
+}
