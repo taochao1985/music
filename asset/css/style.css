@@ -50,6 +50,7 @@ h5 {
 	font-weight: 700;
 }
 h6 {
+    font-size: 14px;
 	font-weight: 700;
 }
 h1 span,
@@ -79,6 +80,13 @@ img {
 	display: block;
 	max-width: 100%;
 	height: auto;
+}
+ul{
+    padding-left:15px;
+}
+li{
+    list-style-type: none;
+    font-size:14px;
 }
 .list-unstyled li {
 	padding: 5px 0;
@@ -151,7 +159,7 @@ blockquote {
 	background-color: #020202;
 	padding: 40px 0;
 }
-.subfooter a {
+.subfooter a,.yellow_font {
 color: #eb593c;
 }
 .section {
@@ -501,15 +509,15 @@ text-align:center;
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus,
 .nav-pills > li > a:hover {
-	background-color: #eb593c;
+	background-color: #fff;
 	border-color: #eb593c;
-	color: #2F2F2F;
+	color: #eb593c;
 }
 .nav-pills > li > a {
 	border-radius: 0;
 	padding: 8px 20px;
 	border: 1px solid #cacaca;
-	color: #666666;
+	color: #fff;
 	font-size: 12px;
 	text-transform: uppercase;
 	font-weight: 300;

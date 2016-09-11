@@ -79,6 +79,7 @@
                                                 <li><a href="#about"><?php echo $this->lang->line('about_us');?></a></li>
 
                                                 <li><a href="#course_brief"><?php echo $this->lang->line('course_brief');?></a></li>
+                                                <li><a href="#school_brief"><?php echo $this->lang->line('school_brief');?></a></li>
                                                 <!--li><a href="#team">Team</a></li-->
                                                 <!--li><a href="#price">Price</a></li-->
                                                 <li><a href="#contact"><?php echo $this->lang->line('contact');?></a></li>
@@ -120,22 +121,7 @@
                 </div>
             </div>
         </div>
-        <!-- banner end -->
-        <section class="hero-caption secPadding">
 
-        <div class="container">
-
-    <div class="row " style="margin-top: 0px;">
-                <div class="col-sm-12">
-    <h2>Together<strong>Lets Start</strong> - <span>BUSINESS</span> with future perspective.</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure aperiam consequatur quo. Sed quis tortor magna. Maecenas hendrerit feugiat pulvinar. Aenean condimentum quam eu ultricies cursus.  Nulla facilisi. In hac habitasse platea dictumst. Ut nec tellus neque. Sed non dui eget arcu elementum facilisis.</p>
-    </div>
-
-            </div>
-
-        </div>
-
-</section>
 <!-- section start -->
         <section class="section transprant-bg pclear secPadding">
             <div class="container no-view" data-animation-effect="fadeIn">
@@ -166,7 +152,7 @@
         <!-- section end -->
 
         <!-- section start -->
-        <section class="section clearfix no-view secPadding" data-animation-effect="fadeIn">
+        <section class="section clearfix no-view secPadding default-bg" data-animation-effect="fadeIn">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -286,11 +272,19 @@
                             <?php }} ?>
 
                             </ul>
-                            <div id="myTabContent" class="tab-content">
+                            <div id="course_brief_main" class="tab-content">
                             <?php if($course_info) { foreach($course_info as $k=>$v){?>
-                              <div role="tabpanel" class="tab-pane fade" id="school" aria-labelledby="school-tab">
+                              <div role="tabpanel" class="tab-pane fade <?php if($k==0){?>active in<?php }?>" id="course_info<?php echo $v->id;?>" aria-labelledby="school-tab">
                                  <div class="row">
                                       <?php echo $v->desc;?>
+                                      <div class="row text-center">
+                                            <?php if($v->pdf){?>
+                                                <button onclick="location.href='<?php echo $v->pdf;?>'" type="button" class="btn btn-default"><?php echo $this->lang->line('download_pdf');?></button>
+                                            <?php }else{?>
+                                                <button type="button" class="btn btn-default"><?php echo $this->lang->line('download_pdf');?></button>
+                                            <?php }?>
+                                            <button type="button" class="btn btn-default col-md-offset-1 index_register_button"><?php echo $this->lang->line('register_now');?></button>
+                                      </div>
                                  </div>
                               </div>
                             <?php }}?>
@@ -303,8 +297,49 @@
         <!-- section end -->
 
 
+
+
+         <!-- section start -->
+        <section class="section clearfix no-view secPadding default-bg" data-animation-effect="fadeIn">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 id="school_brief" class="title text-center"><?php echo $this->lang->line('school_brief');?></h1>
+                         <div class="bs-example bs-example-tabs">
+                            <ul id="myTab" class="nav nav-tabs" role="tablist">
+                            <?php if($school_info) { foreach($school_info as $k=>$v){?>
+                              <li role="presentation" <?php if($k==0){?>class="active" <?php }else{ ?>class=""<?php }?>><a href="#school_info<?php echo $v->id;?>" id="school_info<?php echo $v->id;?>-tab" role="tab" data-toggle="tab" aria-controls="school_info<?php echo $v->id;?>" aria-expanded="true"><?php echo $v->name;?></a></li>
+                            <?php }} ?>
+
+                            </ul>
+                            <div id="school_info_main" class="tab-content">
+                            <?php if($school_info) { foreach($school_info as $k=>$v){?>
+                              <div role="tabpanel" class="tab-pane fade <?php if($k==0){?>active in<?php }?>" id="school_info<?php echo $v->id;?>" aria-labelledby="school-tab">
+                                 <div class="row">
+                                      <?php echo $v->desc;?>
+                                      <div class="row text-left">
+                                           <h6 class="yellow_font"><?php echo $v->name;?></h6>
+                                           <ul>
+                                               <li><?php echo $this->lang->line('inquire_number');?>：<?php echo $v->phone;?></li>
+                                               <li><?php echo $this->lang->line('email');?>:<a href="mailto:<?php echo $v->email;?>"><?php echo $v->email;?></a></li>
+                                               <li><?php echo $this->lang->line('address');?>：<?php echo $v->address;?></li>
+                                           </ul>
+                                      </div>
+                                 </div>
+                              </div>
+                            <?php }}?>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section end -->
+
+
+
         <!-- section start -->
-        <div class="default-bg colord secPadding">
+        <div class="colord secPadding">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
@@ -702,6 +737,10 @@
             $('#myTab a').click(function (e) {
               e.preventDefault()
               $(this).tab('show')
+            })
+
+            $(".index_register_button").click(function(){
+                $("#registerModal").modal('show');
             })
         })
         </script>

@@ -60,6 +60,15 @@
                       </div>
                     </div>
 
+
+                    <div class="item form-group">
+                      <label class="control-label col-md-2 col-sm-2 col-xs-12" for="field_one">邮箱
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="email" name="email" value="<?php if($branch){echo $branch->email;}?>" class="form-control col-md-7 col-xs-12">
+                      </div>
+                    </div>
+
                     <div class="item form-group">
                       <label class="control-label col-md-2 col-sm-2 col-xs-12" for="field_one">座机
                       </label>
@@ -172,7 +181,7 @@ $('#file_upload').each(function(){
       $form = $('#demo-form');
       if (submit){
       if($("#coverurl").val() == ''){
-            show_stack_modal('error','请上传头像');
+            show_stack_modal('error','请上传学校图片');
             return false;
         }
 
@@ -180,6 +189,7 @@ $('#file_upload').each(function(){
             name:$("input[name='name']",$form).val(),
             en_name:$("input[name='en_name']",$form).val(),
             phone:$("input[name='phone']",$form).val(),
+            email:$("input[name='email']",$form).val(),
             address:$("input[name='address']",$form).val(),
             en_address:$("input[name='en_address']",$form).val(),
             mobile:$("input[name='mobile']",$form).val(),

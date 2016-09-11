@@ -33,15 +33,16 @@ class Front extends CI_Controller {
             $brief_info_field = 'desc';
             $base_field = 'name as display_name,en_name';
             $teacher_fields = 'name,desc,thumb,instrument,id,country';
-            $course_fields = 'name, desc, recommand_pic, display_order,id';
-
+            $course_fields = 'name, desc, recommand_pic, display_order,id,pdf,pdf_name';
+            $school_fields = 'name, desc, email, address,id,phone';
         }else{
             $brief_info_field = 'en_desc as desc';
             $base_field = 'en_name as display_name,en_name';
             $teacher_fields = 'en_name  as name,en_desc as desc,thumb,instrument,id,en_country as country';
-            $course_fields = 'en_name as name, en_desc as desc, en_recommand_pic as recommand_pic, display_order,id';
+            $school_fields = 'en_name as name, en_desc as desc, email, en_address as address,id,phone';
         }
 
+        $data['school_info'] = $this->music->select('branch',$school_fields,'','','',array('display_order'=>'asc'));
         $data['course_info'] = $this->music->select('course',$course_fields,'','','',array('display_order'=>'asc'));
         $data['instrument'] = $this->music->select('base_info',$base_field,array('type' => 'instrument'));
         $teachers = $this->music->select('teacher',$teacher_fields);

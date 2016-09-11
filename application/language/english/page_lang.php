@@ -113,3 +113,11 @@ $lang['school_brief']        = 'About Rolling Music';
 $lang['teacher_brief']       = 'About Teachers';
 $lang['student_brief']       = 'Voice of Students';
 $lang['parents_brief']       = 'Voice of Parents';
+$lang['download_pdf']        = 'Download PDF';
+$lang['register_now']        = 'ENROLL NOW';
+$lang['inquire_number']      = 'Inquire Number';
+$lang['address']             = 'Address';
+
+
+
+

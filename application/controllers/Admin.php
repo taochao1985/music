@@ -460,7 +460,7 @@ class Admin extends CI_Controller {
             $pics = trim($_POST['pics']);
             $name = trim($_POST['name']);
             $en_name = trim($_POST['en_name']);
-
+            $email = trim($_POST['email']);
 
             $data_array = array(
                     'phone'=>$phone,
@@ -471,6 +471,7 @@ class Admin extends CI_Controller {
                     'en_address'=>$en_address,
                     'pics'=>$pics,
                     'name'=>$name,
+                    'email'=>$email,
                     'en_name'=>$en_name,
                 );
 

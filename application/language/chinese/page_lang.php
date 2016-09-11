@@ -115,8 +115,10 @@ $lang['teacher_brief']       = '教师介绍';
 $lang['student_brief']       = '学生的话';
 $lang['parents_brief']       = '家长的话';
 $lang['course_brief']        = '课程介绍';
-
-
+$lang['download_pdf']        = '下载PDF';
+$lang['register_now']        = '立即注册';
+$lang['inquire_number']      = '咨询电话';
+$lang['address']             = '地址';
 
 
 
