@@ -119,6 +119,8 @@ $lang['download_pdf']        = '下载PDF';
 $lang['register_now']        = '立即注册';
 $lang['inquire_number']      = '咨询电话';
 $lang['address']             = '地址';
+$lang['event_brief']         = '活动介绍';
+$lang['past_event']          = '往期活动';
 
 
 

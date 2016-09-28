@@ -20,6 +20,10 @@
         <link href="/asset/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
         <link href="/asset/css/animations.css" rel="stylesheet">
         <script src="/static/js/jquery.min.js"></script>
+
+        <link href="/asset/css/lightgallery.css" rel="stylesheet">
+        <script src="/asset/js/lightgallery.min.js"></script>
+        <script src="/asset/js/lg-thumbnail.min.js"></script>
     </head>
 
     <body class="no-trans">
@@ -80,6 +84,7 @@
 
                                                 <li><a href="#course_brief"><?php echo $this->lang->line('course_brief');?></a></li>
                                                 <li><a href="#school_brief"><?php echo $this->lang->line('school_brief');?></a></li>
+                                                <li><a href="#event_brief"><?php echo $this->lang->line('event_brief');?></a></li>
                                                 <!--li><a href="#team">Team</a></li-->
                                                 <!--li><a href="#price">Price</a></li-->
                                                 <li><a href="#contact"><?php echo $this->lang->line('contact');?></a></li>
@@ -158,7 +163,7 @@
                     <div class="col-md-12">
                         <h1 id="about" class="title text-center"><?php echo $this->lang->line('about_us');?></h1>
                          <div class="bs-example bs-example-tabs">
-                            <ul id="myTab" class="nav nav-tabs" role="tablist">
+                            <ul class="myTab nav nav-tabs" role="tablist">
                               <li role="presentation" class=""><a href="#school" id="school-tab" role="tab" data-toggle="tab" aria-controls="school" aria-expanded="true"><?php echo $this->lang->line('school_brief');?></a></li>
                               <li role="presentation" class="active"><a href="#teachers" role="tab" id="teachers-tab" data-toggle="tab" aria-controls="teachers" aria-expanded="false"><?php echo $this->lang->line('teacher_brief');?></a></li>
                               <li role="presentation" class=""><a href="#student_words" role="tab" id="student_words-tab" data-toggle="tab" aria-controls="student_words" aria-expanded="false"><?php echo $this->lang->line('student_brief');?></a></li>
@@ -266,7 +271,7 @@
                     <div class="col-md-12">
                         <h1 id="course_brief" class="title text-center"><?php echo $this->lang->line('course_brief');?></h1>
                          <div class="bs-example bs-example-tabs">
-                            <ul id="myTab" class="nav nav-tabs" role="tablist">
+                            <ul class="myTab nav nav-tabs" role="tablist">
                             <?php if($course_info) { foreach($course_info as $k=>$v){?>
                               <li role="presentation" <?php if($k==0){?>class="active" <?php }else{ ?>class=""<?php }?>><a href="#course_info<?php echo $v->id;?>" id="course_info<?php echo $v->id;?>-tab" role="tab" data-toggle="tab" aria-controls="course_info<?php echo $v->id;?>" aria-expanded="true"><?php echo $v->name;?></a></li>
                             <?php }} ?>
@@ -306,7 +311,7 @@
                     <div class="col-md-12">
                         <h1 id="school_brief" class="title text-center"><?php echo $this->lang->line('school_brief');?></h1>
                          <div class="bs-example bs-example-tabs">
-                            <ul id="myTab" class="nav nav-tabs" role="tablist">
+                            <ul class="myTab nav nav-tabs" role="tablist">
                             <?php if($school_info) { foreach($school_info as $k=>$v){?>
                               <li role="presentation" <?php if($k==0){?>class="active" <?php }else{ ?>class=""<?php }?>><a href="#school_info<?php echo $v->id;?>" id="school_info<?php echo $v->id;?>-tab" role="tab" data-toggle="tab" aria-controls="school_info<?php echo $v->id;?>" aria-expanded="true"><?php echo $v->name;?></a></li>
                             <?php }} ?>
@@ -336,6 +341,87 @@
         </section>
         <!-- section end -->
 
+
+         <!-- section start -->
+        <section class="section clearfix no-view secPadding" data-animation-effect="fadeIn">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 id="event_brief" class="title text-center"><?php echo $this->lang->line('event_brief');?></h1>
+                         <div class="bs-example bs-example-tabs">
+                            <ul class="myTab nav nav-tabs" role="tablist">
+                            <?php if($event_info) { foreach($event_info as $k=>$v){?>
+                              <li role="presentation" <?php if($k==0){?>class="active" <?php }else{ ?>class=""<?php }?> >
+                              <a href="#event_info<?php echo $v->id;?>" id="event_info<?php echo $v->id;?>-tab" role="tab" data-toggle="tab" aria-controls="event_info<?php echo $v->id;?>" aria-expanded="true">
+                              <?php echo mb_substr($v->name,0,12,'utf-8');?></a></li>
+                            <?php }} ?>
+                            <li role="presentation">
+                              <a href="#event_info9999" id="event_info9999-tab" role="tab" data-toggle="tab" aria-controls="event_info9999" aria-expanded="true">
+                                <?php echo $this->lang->line('past_event');?>
+                              </a></li>
+
+                            </ul>
+                            <div id="event_brief_main" class="tab-content">
+                            <?php if($event_info) { foreach($event_info as $k=>$v){?>
+                              <div role="tabpanel" class="tab-pane fade <?php if($k==0){?>active in<?php }?>" id="event_info<?php echo $v->id;?>" aria-labelledby="school-tab">
+                                 <div class="row">
+                                  <?php echo $v->name;?>
+                                      <?php echo $v->desc;?>
+
+                                 </div>
+                              </div>
+                            <?php }}?>
+                            <div role="tabpanel" class="tab-pane fade" id="event_info9999" aria-labelledby="school-tab">
+                                 <div class="row default-bg">
+
+                                    <div class='col-md-12'>
+                                          <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+                                            <!-- Bottom Carousel Indicators -->
+                                            <ol class="carousel-indicators">
+                                              <?php if($past_event_info){ foreach($past_event_info as $k=>$v){ ?>
+                                                <li data-target="#quote-carousel" data-slide-to="<?php echo $k;?>" <?php if($k==0){?>class="active" <?php }else{ ?>class=""<?php }?> ></li>
+                                              <?php }} ?>
+
+                                            </ol>
+
+                                            <!-- Carousel Slides / Quotes -->
+                                            <div class="carousel-inner">
+                                            <?php if($past_event_info){ foreach($past_event_info as $k=>$v){ ?>
+                                              <!-- Quote 1 -->
+                                              <div class="item <?php if($k==0){?>active<?php }?>">
+                                                <blockquote>
+                                                  <div class="">
+
+                                                    <div><?php echo $v->name;?></div>
+                                                    <div><?php echo $v->desc;?></div>
+                                                    <div class="text-right more_imgs" style="color:#fff;cursor:pointer;">+更多图片</div>
+                                                    <div class="light_gallery hidden">
+                                                        <?php if($v->event_img){  $event_img = explode(';',$v->event_img);
+                                                                foreach ($event_img as $key => $value) {
+                                                                    if($value){
+                                                            ?>
+                                                                <img src="<?php echo $value;?>" />
+                                                        <?php } } }?>
+                                                    </div>
+                                                  </div>
+                                                </blockquote>
+                                              </div>
+
+                                            <?php }}?>
+
+                                            </div>
+                                          </div>
+                                        </div>
+                                 </div>
+                              </div>
+
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section end -->
 
 
         <!-- section start -->
@@ -734,7 +820,7 @@
         <script type="text/javascript" src="/asset/js/custom.js"></script>
         <script>
         $(document).ready(function(){
-            $('#myTab a').click(function (e) {
+            $('.myTab a').click(function (e) {
               e.preventDefault()
               $(this).tab('show')
             })
@@ -742,6 +828,18 @@
             $(".index_register_button").click(function(){
                 $("#registerModal").modal('show');
             })
+
+            $('.more_imgs').click(function(){
+                var target = $(this).next('.light_gallery');
+                var album_gallery = [];
+                target.children('img').each(function(){
+                    album_gallery.push({
+                        "src" : $(this).attr('src'),
+                        "thumb" : $(this).attr('src')
+                    })
+                })
+                $(this).next('.light_gallery').lightGallery({dynamic: true,dynamicEl:album_gallery,download : false});
+            });
         })
         </script>
     </body>

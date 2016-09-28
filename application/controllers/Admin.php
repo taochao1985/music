@@ -1636,12 +1636,16 @@ class Admin extends CI_Controller {
             $en_name = trim($_POST['en_name']);
             $desc = trim($_POST['desc']);
             $en_desc = trim($_POST['en_desc']);
+            $event_type = trim($_POST['event_type']);
+            $event_url = trim($_POST['event_url']);
             $display_order = trim($_POST['display_order']);
 
             $data_array = array(
                                 'en_name'=>$en_name,
                                 'name'=>$name,
                                 'desc'=>$desc,
+                                'event_type'=>$event_type,
+                                'event_img'=>$event_url,
                                 'en_desc'=>$en_desc,
                                 'display_order'=>$display_order
                                 );
@@ -1664,8 +1668,8 @@ class Admin extends CI_Controller {
             $event = $this->music->select('event','*',array('id'=>$id));
 
             if($event){
-                $data['event'] = $event[0];
-
+                $event = $event[0];
+                $data['event'] = $event;
             }else{
                 $data['event'] = '';
             }

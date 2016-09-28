@@ -117,6 +117,8 @@ $lang['download_pdf']        = 'Download PDF';
 $lang['register_now']        = 'ENROLL NOW';
 $lang['inquire_number']      = 'Inquire Number';
 $lang['address']             = 'Address';
+$lang['event_brief']         = 'ACTIVITIES';
+$lang['past_event']          = 'Former Activities';
 
 
 

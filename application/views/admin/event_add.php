@@ -1,6 +1,8 @@
 <?php $this->load->view('admin/common_header');?>
 <script type="text/javascript" src="/static/js/operamasks-ui.min.js"></script>
 <script type="text/javascript" src="/static/ckeditor/ckeditor.js"></script>
+<link rel="stylesheet" href="/static/css/uploadify.css" media="screen" />
+<script type="text/javascript" src="/static/js/jquery.uploadify.min.js"></script>
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
@@ -12,7 +14,34 @@
                   <br>
                   <form class="form-horizontal form-label-left" data-parsley-validate="" id="demo-form" novalidate="">
                   <input type="hidden" id="event_id" name="event_id" value="<?php if ($event){ echo $event->id; }else{?>0<?php }?>" />
-
+                    <div class="item form-group">
+                      <label class="control-label col-md-2 col-sm-2 col-xs-12" for="field_one">活动类型
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select id="event_type" name="event_type" class="form-control">
+                            <option value="0" <?php if($event &&($event->event_type == 0)){?>selected<?php }?>>近期活动</option>
+                            <option value="1" <?php if($event &&($event->event_type == 1)){?>selected<?php }?>>往期活动</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="item form-group">
+                      <label class="control-label col-md-2 col-sm-2 col-xs-12">活动照片</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="cover-area">
+                          <div class="cover-hd">
+                            <input id="file_upload" class="file_upload" name="file_upload" type="file" />
+                            <input id="event_url" value="<?php if ($event){ echo $event->event_img;}?>" name="event_url" type="hidden" />
+                          </div>
+                          <div id="imgArea" class="cover-bd" <?php if(!$event){?>style="display: none;"<?php }?>>
+                              <?php if($event && $event->event_img){ $imgs = explode(';',$event->event_img); foreach($imgs as $k=>$v){ if($v){?>
+                              <div style='width:100px;float:left;margin:0 10px 10px 0;text-align:center;' class='event_img'>
+                                <img src="<?php echo $v;?>" class="img" width='100' height='100'>
+                              <br/><a href='javascript:void(0)' data_url='<?php echo $v;?>' class='delete_img'>删除</a></div>
+                              <?php }} }?>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <div class="item form-group">
                       <label class="control-label col-md-2 col-sm-2 col-xs-12" for="field_one">活动名(CH)
                       </label>
@@ -72,7 +101,37 @@
           </div>
 
   <script type="text/javascript">
+    $('#file_upload').each(function(){
+      var $fileInput = $(this);
+      var $cont =  $fileInput.closest(".cont");
+      var name = $fileInput.attr("name");
+      $fileInput.uploadify({
+        'swf'      : '/static/swf/uploadify.swf',
+        'uploader' : '/uploads.php',
+        'onUploadSuccess' : function(file,data,response)  {
+          var jsonData = eval("("+data+")");
+          var event_url = $("#event_url").val();
+          var img = "<div style='width:100px;float:left;margin:0 10px 10px 0;text-align:center;' class='event_img'><img src='"+jsonData.fileUrl+"' width='100' height='100' /><br/><a href='javascript:void(0)' data_url='"+jsonData.fileUrl+"' class='delete_img'>删除</a></div>";
+            if(event_url){
+              $("#event_url").val(event_url+';'+jsonData.fileUrl);
+              $("#imgArea").append(img);
+            }else{
+              $("#imgArea").show().append(img);
+              $("#event_url").val(jsonData.fileUrl);
+            }
+          }
 
+      });
+    });
+
+    $(document).on("click", ".delete_img", function() {
+     var url = $(this).attr('data_url');
+     var event_url = $("#event_url").val();
+     event_url = event_url.replace(url+';','');
+     event_url = event_url.replace(url,'');
+     $("#event_url").val(event_url);
+     $(this).parents('.event_img').remove();
+   });
 
     $('form').submit(function(e) {
       e.preventDefault();
@@ -85,7 +144,9 @@
       $form = $('#demo-form');
       if (submit){
         var submitData={
+            event_type:$("select[name='event_type']",$form).val(),
             name:$("input[name='name']",$form).val(),
+            event_url:$("input[name='event_url']",$form).val(),
             en_name:$("input[name='en_name']",$form).val(),
             display_order:$("input[name='display_order']",$form).val(),
             desc:$.trim(desc.document.getBody().getHtml()),
