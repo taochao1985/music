@@ -1105,6 +1105,7 @@ class Admin extends CI_Controller {
             $en_desc = trim($_POST['en_desc']);
             $type = trim($_POST['type']);
             $data_array = array('cate'=>$type,'en_desc'=>$en_desc,'desc'=>trim($_POST['desc']));
+   
             if ($config){
                 $re = $this->music->update('brief_info',$data_array,array('cate'=>$type));
             }else{

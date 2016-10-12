@@ -215,6 +215,7 @@ padding: 17px 34px;}
 .default-bg a:hover,
 .transprant-bg a:hover {
 	text-decoration: none;
+	color:#eb593c;
 }
 .transprant-bg {
 	-webkit-background-size: cover !important;

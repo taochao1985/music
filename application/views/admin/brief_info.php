@@ -67,7 +67,7 @@
             en_desc:$.trim(en_desc.document.getBody().getHtml()),
             type:$("input[name='type']",$form).val()
         };
-         $.post('/admin/brief_info',submitData,function(data){
+         $.post('/admin/brief_info/<?php echo $type; ?>',submitData,function(data){
 
             if(data.success=="yes")
             {
