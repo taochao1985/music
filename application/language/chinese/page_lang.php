@@ -110,7 +110,7 @@ $lang['wrong_captcha']       = '验证码错误或已失效';
 $lang['find_password']       = '忘记密码';
 $lang['edit_success']        = '成功修改';
 $lang['mobile_not_exist']    = '手机号码不存在！';
-$lang['school_brief']        = '学校简介';
+$lang['school_brief']        = '关于RM';
 $lang['teacher_brief']       = '教师介绍';
 $lang['student_brief']       = '学生的话';
 $lang['parents_brief']       = '家长的话';
@@ -121,6 +121,3 @@ $lang['inquire_number']      = '咨询电话';
 $lang['address']             = '地址';
 $lang['event_brief']         = '活动介绍';
 $lang['past_event']          = '往期活动';
-
-
-

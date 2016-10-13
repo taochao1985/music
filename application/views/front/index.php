@@ -283,11 +283,7 @@
                                  <div class="row">
                                       <?php echo $v->desc;?>
                                       <div class="row text-center">
-                                            <?php if($v->pdf){?>
-                                                <button onclick="location.href='<?php echo $v->pdf;?>'" type="button" class="btn btn-default"><?php echo $this->lang->line('download_pdf');?></button>
-                                            <?php }else{?>
-                                                <button type="button" class="btn btn-default"><?php echo $this->lang->line('download_pdf');?></button>
-                                            <?php }?>
+
                                             <button type="button" class="btn btn-default col-md-offset-1 index_register_button"><?php echo $this->lang->line('register_now');?></button>
                                       </div>
                                  </div>
@@ -744,7 +740,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-12">
+                        <div class="col-sm-12 hidden">
                             <div class="footer-content">
 
 
@@ -763,7 +759,7 @@
                             </div>
 
                         </aside>
-                                <ul class="social-links">
+                                <ul class="social-links hidden">
                                     <li class="facebook"><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li class="twitter"><a target="_blank" href="#"><i class="fa fa-twitter"></i></a></li>
                                     <li class="googleplus"><a target="_blank" href="#"><i class="fa fa-google-plus"></i></a></li>
