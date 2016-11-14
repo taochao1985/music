@@ -278,7 +278,7 @@
                                       <?php echo $v->desc;?>
                                       <div class="row text-center">
 
-                                            <button type="button" class="btn btn-default col-md-offset-1 index_register_button"><?php echo $this->lang->line('register_now');?></button>
+                                            <button type="button" class="btn btn-default col-md-offset-1 index_register_button"><?php echo $this->lang->line('listen_now');?></button>
                                       </div>
                                  </div>
                               </div>
@@ -714,7 +714,52 @@
 
         <?php $this->load->view('front/login_form');?>
         <!-- JavaScript -->
+    <div class="modal fade" id="listenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="exampleModalLabel"><?php echo $this->lang->line('listen_now');?></h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal form-label-left" data-parsley-validate="" id="listen-form" novalidate="">
+              <div class="form-group item">
+                <label for="name" class="col-sm-3 col-xs-4 text-right control-label"><?php echo $this->lang->line('name');?></label>
+                <div class="col-sm-9 col-xs-8">
+                  <input type="text" class="form-control" id="listen_name" placeholder="<?php echo $this->lang->line('name');?>" required="required">
+                  <i class="fa fa-user form-control-feedback"></i>
+                </div>
+              </div>
+              <div class="form-group item">
+                <label for="age" class="col-sm-3 col-xs-4 text-right control-label"><?php echo $this->lang->line('mobile');?></label>
+                <div class="col-sm-9 col-xs-8">
+                  <input type="tel" class="form-control" id="listen_mobile" placeholder="<?php echo $this->lang->line('mobile');?>" required="required">
+                </div>
+              </div>
 
+              <div class="form-group item">
+                <label for="instrument_label" class="col-sm-3 col-xs-4 control-label"><?php echo $this->lang->line('instrument_label');?></label>
+                <div class="col-sm-9 col-xs-8">
+                  <select class="form-control" id="listen_instrument">
+                      <?php foreach ($instrument as $key => $value) { ?>
+                          <option value="<?php echo $value->display_name;?>"><?php echo $value->display_name;?></option>
+                      <?php }?>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="class_id" class="col-sm-7 col-xs-5 text-right control-label"></label>
+                <button type="submit" class="btn btn-default col-sm-3 col-xs-2" id="listen_now_sub"><?php echo $this->lang->line('save_label');?></button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
         <script type="text/javascript" src="/asset/bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/asset/plugins/modernizr.js"></script>
         <script type="text/javascript" src="/asset/plugins/isotope/isotope.pkgd.min.js"></script>
@@ -723,23 +768,21 @@
 
         <!-- Custom Scripts -->
         <script type="text/javascript" src="/asset/js/custom.js"></script><script type="text/javascript">
-	$(function() {
-		$(".flexslider").flexslider({
-			slideshowSpeed: 4000, //展示时间间隔ms
-			animationSpeed: 400, //滚动时间ms
-			touch: true //是否支持触屏滑动
-		});
-	});
-</script>
-        <script>
+
         $(document).ready(function(){
+          $(".flexslider").flexslider({
+      			slideshowSpeed: 4000, //展示时间间隔ms
+      			animationSpeed: 400, //滚动时间ms
+      			touch: true //是否支持触屏滑动
+      		});
+
             $('.myTab a').click(function (e) {
               e.preventDefault()
               $(this).tab('show')
             })
 
             $(".index_register_button").click(function(){
-                $("#registerModal").modal('show');
+                $("#listenModal").modal('show');
             })
 
             $('.more_imgs').click(function(){
@@ -752,6 +795,38 @@
                     })
                 })
                 $(this).next('.light_gallery').lightGallery({dynamic: true,dynamicEl:album_gallery,download : false});
+            });
+
+            $('#listen-form').submit(function(e) {
+              e.preventDefault();
+              var listen_submit = true;
+              // evaluate the form using generic validaing
+              if (!validator.checkAll($(this))) {
+                listen_submit = false;
+              }
+
+              if (listen_submit){
+                var name     = $.trim($('#listen_name').val());
+                var listen_mobile  = parseInt($('#listen_mobile').val());
+                var instrument_id  = $.trim($('#listen_instrument').val());
+
+                var submitData = {
+                    name: name,
+                    listen_mobile:listen_mobile,
+                    instrument_id:instrument_id
+                };
+
+                $.post('/front/do_listen', submitData,function(data) {
+
+                  if (data.success == 'yes') {
+                      show_stack_modal('success',data.msg);
+                      $("#listenModal").modal('hide');
+                  }else{
+                      show_stack_modal('error',data.msg);
+                  }
+                },"json");
+              }
+              return false;
             });
         })
         </script>

@@ -56,6 +56,8 @@
                 </li>
                 <li><a><i class="fa fa-user"></i> 基础信息管理 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
+                    <li><a href="/admin/listen_list">试听列表</a>
+                    </li>
                     <li><a href="/admin/branch_list">教学点列表</a>
                     </li>
                     <li><a href="/admin/teacher_list">教师列表</a>

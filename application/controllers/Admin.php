@@ -511,6 +511,12 @@ class Admin extends CI_Controller {
         $this->load->view('admin/branch_list',$data);
     }
 
+    function listen_list(){
+        $this->top();
+        $data['history'] = $this->music->select('listen_history','*');
+        $this->load->view('admin/listen_list',$data);
+    }
+
 
   function _config_items($type){
      $config_items = array(
@@ -1105,7 +1111,7 @@ class Admin extends CI_Controller {
             $en_desc = trim($_POST['en_desc']);
             $type = trim($_POST['type']);
             $data_array = array('cate'=>$type,'en_desc'=>$en_desc,'desc'=>trim($_POST['desc']));
-   
+
             if ($config){
                 $re = $this->music->update('brief_info',$data_array,array('cate'=>$type));
             }else{

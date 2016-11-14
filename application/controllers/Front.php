@@ -31,7 +31,7 @@ class Front extends CI_Controller {
 	{
         if($this->_session_language == 'chinese'){
             $brief_info_field = 'desc';
-            $base_field = 'name as display_name,en_name';
+            $base_field = 'name as display_name,en_name,id';
             $teacher_fields = 'name,desc,thumb,instrument,id,country';
             $course_fields = 'name, desc, recommand_pic, display_order,id,pdf,pdf_name';
             $school_fields = 'name, desc, email, address,id,phone';
@@ -39,7 +39,7 @@ class Front extends CI_Controller {
 
         }else{
             $brief_info_field = 'en_desc as desc';
-            $base_field = 'en_name as display_name,en_name';
+            $base_field = 'en_name as display_name,en_name,id';
             $teacher_fields = 'en_name  as name,en_desc as desc,thumb,instrument,id,en_country as country';
             $school_fields = 'en_name as name, en_desc as desc, email, en_address as address,id,phone';
             $event_fields = 'en_name as name, en_desc as desc, event_img, id';
@@ -294,6 +294,33 @@ class Front extends CI_Controller {
               }
         }
     }
+
+
+		function do_listen(){
+			  $listen_mobile = trim($_POST['listen_mobile']);
+				$name          = trim($_POST['name']);
+				$instrument    = trim($_POST['instrument_id']);
+
+				$listen_check = $this->music->select('listen_history','id', array('mobile' => $listen_mobile));
+				if(!$listen_check){
+					$listen_data = array(
+							'mobile'=>$listen_mobile,
+							'name'=>$name,
+							'instrument'=>$instrument,
+							'created'=>date('Y-m-d H:i:s')
+						);
+					$result = $this->music->insert('listen_history',$listen_data);
+					$mobile = '13795366537';
+				  if($result){
+						$this->music->_send_sms($mobile,$name.'与'.date('Y-m-d H:i:s').'申请了'.$instrument.'试听，手机号：'.$listen_mobile);
+						echo json_encode(array('success'=>'yes','msg'=>$this->lang->line('listen_success')));exit;
+					}else{
+						echo json_encode(array('success'=>'no','msg'=>$this->lang->line('submit_wrong')));exit;
+					}
+				}else{
+					echo json_encode(array('success'=>'no','msg'=>$this->lang->line('already_apply')));exit;
+				}
+		}
 
 
     function do_register(){

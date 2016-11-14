@@ -120,3 +120,6 @@ $lang['inquire_number']      = 'Inquire Number';
 $lang['address']             = 'Address';
 $lang['event_brief']         = 'ACTIVITIES';
 $lang['past_event']          = 'Former Activities';
+$lang['submit_wrong']        = 'Error!';
+$lang['listen_success']      = '您已成功报名免费试听课，稍候课程顾问会联系您，请耐心等待';
+$lang['already_apply']       = '您已申请过该试听，请确认';
