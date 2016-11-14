@@ -21,12 +21,12 @@
         <link href="/asset/css/animations.css" rel="stylesheet">
         <script src="/static/js/jquery.min.js"></script>
 
-        <link rel="stylesheet" href="/static/css/supersized.css">
+        <link href="/asset/css/flexslider.css" rel="stylesheet">
         <link href="/asset/css/lightgallery.css" rel="stylesheet">
         <script src="/asset/js/lightgallery.min.js"></script>
         <script src="/asset/js/lg-thumbnail.min.js"></script>
-        <script src="/static/js/supersized.3.2.7.min.js"></script>
-        <script src="/static/js/supersized-init.js"></script>
+        <script src="/asset/js/jquery.flexslider-min.js"></script>
+
     </head>
 
     <body class="no-trans">
@@ -113,9 +113,13 @@
         <!-- header end -->
 
         <!-- banner start -->
-        <div id="banner" class="banner">
-             ssss
-        </div>
+      <div class="flexslider" style="width:100%;height:100%">
+      	<ul class="slides">
+      		<li><img src="/static/images/backgrounds/1.jpg" /></li>
+      		<li><img src="/static/images/backgrounds/2.jpg" /></li>
+      		<li><img src="/static/images/backgrounds/3.jpg" /></li>
+      	</ul>
+      </div>
 
 <!-- section start -->
         <section class="section transprant-bg pclear secPadding">
@@ -718,7 +722,15 @@
         <script type="text/javascript" src="/asset/plugins/jquery.appear.js"></script>
 
         <!-- Custom Scripts -->
-        <script type="text/javascript" src="/asset/js/custom.js"></script>
+        <script type="text/javascript" src="/asset/js/custom.js"></script><script type="text/javascript">
+	$(function() {
+		$(".flexslider").flexslider({
+			slideshowSpeed: 4000, //展示时间间隔ms
+			animationSpeed: 400, //滚动时间ms
+			touch: true //是否支持触屏滑动
+		});
+	});
+</script>
         <script>
         $(document).ready(function(){
             $('.myTab a').click(function (e) {
