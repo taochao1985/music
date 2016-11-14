@@ -21,9 +21,12 @@
         <link href="/asset/css/animations.css" rel="stylesheet">
         <script src="/static/js/jquery.min.js"></script>
 
+        <link rel="stylesheet" href="/static/css/supersized.css">
         <link href="/asset/css/lightgallery.css" rel="stylesheet">
         <script src="/asset/js/lightgallery.min.js"></script>
         <script src="/asset/js/lg-thumbnail.min.js"></script>
+        <script src="/static/js/supersized.3.2.7.min.js"></script>
+        <script src="/static/js/supersized-init.js"></script>
     </head>
 
     <body class="no-trans">
@@ -83,7 +86,7 @@
                                                 <li><a href="#about"><?php echo $this->lang->line('about_us');?></a></li>
 
                                                 <li><a href="#course_brief"><?php echo $this->lang->line('course_brief');?></a></li>
-                                                <li><a href="#school_brief"><?php echo $this->lang->line('school_brief');?></a></li>
+                                                <li><a href="#school_brief"><?php echo $this->lang->line('menu_school_brief');?></a></li>
                                                 <li><a href="#event_brief"><?php echo $this->lang->line('event_brief');?></a></li>
                                                 <!--li><a href="#team">Team</a></li-->
                                                 <!--li><a href="#price">Price</a></li-->
@@ -111,20 +114,7 @@
 
         <!-- banner start -->
         <div id="banner" class="banner">
-            <div class="banner-image"></div>
-            <div class="banner-caption">
-                <div class="container">
-                    <div class="row">
-                        <div class="caption-data" style="margin-top: 0px; opacity: 1;" data-animation-effect="fadeIn">
-                                <h1>一起玩乐队!</h1>
-                                <h3 class="padding-top30">Be Your Own Band</h3>
-                                <div class="padding-top60 contact-form">
-                                    <button class="btn cta-button">Read More</button>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
+             ssss
         </div>
 
 <!-- section start -->
@@ -421,7 +411,7 @@
 
 
         <!-- section start -->
-        <div class="colord secPadding">
+        <div class="colord secPadding" style="display:none;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
@@ -550,7 +540,7 @@
 <!-- section start -->
         <section class="default-bg secPadding">
 
-<div class="container">
+<div class="container" style="display:none;">
   <div class="row">
     <div class='col-md-offset-2 col-md-8 text-center'>
     <h2>Clients Testimonials</h2>
@@ -617,92 +607,7 @@
   </div>
 </div>
         </section>
-        <!-- section end -->
-        <section id="price" class="price-table secPadding" style="display:none;">
-         <div class="container text-center">
-         <div class="heading">
-            <h1 class="text-center title" id="">Our Price</h1>
-                <div class="separator"></div>
-                <p class="lead text-center">Lorem ipsum dolor sit amet laudantium incidunt ut laboriosam.</p>
-                <br>
-          </div>
-            <div class="row">
-            <div class="col-sm-3">
-              <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                  <h3>Basic</h3>
-                </div>
-                <div class="panel-body">
-                  <h3 class="panel-title price">$9<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
-                </div>
-                <ul class="list-group">
-                  <li class="list-group-item">5 Projects</li>
-                  <li class="list-group-item">5 GB of Storage</li>
-                  <li class="list-group-item">Up to 100 Users</li>
-                  <li class="list-group-item">10 GB Bandwidth</li>
-                  <li class="list-group-item">Security Suite</li>
-                  <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                  <h3>Plus</h3>
-                </div>
-                <div class="panel-body">
-                  <h3 class="panel-title price">$19<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
-                </div>
-                <ul class="list-group">
-                  <li class="list-group-item">10 Projects</li>
-                  <li class="list-group-item">10 GB of Storage</li>
-                  <li class="list-group-item">Up to 250 Users</li>
-                  <li class="list-group-item">25 GB Bandwidth</li>
-                  <li class="list-group-item">Security Suite</li>
-                  <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="panel panel-danger text-center">
-                <div class="panel-heading">
-                  <h3>Premium</h3>
-                </div>
-                <div class="panel-body">
-                  <h3 class="panel-title price">$29<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
-                </div>
-                <ul class="list-group">
-                  <li class="list-group-item">Unlimited</li>
-                  <li class="list-group-item">50 GB of Storage</li>
-                  <li class="list-group-item">Up to 1000 Users</li>
-                  <li class="list-group-item">100 GB Bandwidth</li>
-                  <li class="list-group-item">Security Suite</li>
-                  <li class="list-group-item"><a class="btn btn-primary">Sign Up Now!</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                  <h3>Ultimate</h3>
-                </div>
-                <div class="panel-body">
-                  <h3 class="panel-title price">$49<span class="price-cents">99</span><span class="price-month">mo.</span></h3>
-                </div>
-                <ul class="list-group">
-                  <li class="list-group-item">Unlimited</li>
-                  <li class="list-group-item">150 GB of Storage</li>
-                  <li class="list-group-item">Unlimited</li>
-                  <li class="list-group-item">500 GB Bandwidth</li>
-                  <li class="list-group-item">Security Suite</li>
-                  <li class="list-group-item"><a class="btn btn-default">Sign Up Now!</a></li>
-                </ul>
-              </div>
-            </div>
 
-          </div>
-         </div>
-    </section>
 
 
         <!-- footer start -->

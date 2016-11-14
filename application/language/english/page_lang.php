@@ -110,6 +110,7 @@ $lang['edit_success']        = 'Success';
 $lang['mobile_not_exist']    = 'Mobile Not Exist';
 $lang['new_password']        = 'New Password';
 $lang['school_brief']        = 'About Rolling Music';
+$lang['menu_school_brief']   = 'About Rolling Music';
 $lang['teacher_brief']       = 'About Teachers';
 $lang['student_brief']       = 'Voice of Students';
 $lang['parents_brief']       = 'Voice of Parents';
@@ -119,7 +120,3 @@ $lang['inquire_number']      = 'Inquire Number';
 $lang['address']             = 'Address';
 $lang['event_brief']         = 'ACTIVITIES';
 $lang['past_event']          = 'Former Activities';
-
-
-
-

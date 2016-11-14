@@ -15,7 +15,7 @@
 				},"json");
         });
 
-		$(".banner-image").backstretch('/asset/images/home-banner.jpg');
+		//$(".banner-image").backstretch('/asset/images/home-banner.jpg');
 
 		// Fixed header
 		//-----------------------------------------------

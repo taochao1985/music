@@ -140,6 +140,7 @@ blockquote {
 	min-height: 100%;
 	width: 100%;
 }
+/*
 .banner:after {
 	position: absolute;
 	top: 0;
@@ -148,7 +149,7 @@ blockquote {
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.52);
 	content: "";
-}
+}*/
 .banner-caption {
 	position: absolute;
 	top: 50%;
