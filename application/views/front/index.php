@@ -128,20 +128,20 @@
                 <div class="space"></div>
                 <div class="row custom_recommandation">
                     <div class="col-md-3">
-                        <img src="http://www.rollingmusic.cn/UploadFiles/Curriculum/201602291452270.png" class="img-circle">
+                        <img src="/asset/images/free_listen_1.png" class="img-circle">
                         <div class="title"><a>免费试听课</a></div>
                     </div>
                     <div class="col-md-3">
-                        <img src="http://www.rollingmusic.cn/UploadFiles/Curriculum/201604081559222.jpg" class="img-circle">
-                        <div class="title"><a>成人课程</a></div>
+                        <img src="/asset/images/free_listen.png" class="img-circle">
+                        <div class="title"><a>冬夏令营</a></div>
                     </div>
                     <div class="col-md-3">
-                        <img src="http://www.rollingmusic.cn/UploadFiles/Curriculum/201604081602271.jpg" class="img-circle">
-                        <div class="title"><a>儿童/青少年课程</a></div>
+                        <img src="/asset/images/normal_course.png" class="img-circle">
+                        <div class="title"><a>常规课程</a></div>
                     </div>
                     <div class="col-md-3">
-                        <img src="http://www.rollingmusic.cn/UploadFiles/Curriculum/201604081555112.jpg" class="img-circle">
-                        <div class="title"><a>寒假夏令营</a></div>
+                        <img src="/asset/images/events.png" class="img-circle">
+                        <div class="title"><a>精彩活动</a></div>
                     </div>
 
                 </div>
