@@ -15,25 +15,25 @@
                   <table id="datatable-fixed-header" class="table table-striped table-bordered">
                     <thead>
                       	<tr >
-						    <th>标题</th>
-							<th>图片</th>
-							<th>关键词</th>
-							<th>来源url</th>
-							<th>操作</th>
-						</tr>
+            						    <th>标题</th>
+              							<th>图片</th>
+              							<th>关键词</th>
+              							<th>来源url</th>
+              							<th>操作</th>
+            						</tr>
                     </thead>
                     <tbody>
                       <?php foreach ($materials as $key=>$val){?>
-							<tr>
-								 <td><?php echo $val->title;?></td>
-								 <td><img src="<?php echo $val->coverurl;?>" width="50"></td>
-								 <td><?php echo $val->keywords;?></td>
-								 <td><?php echo $val->source_url;?></td>
-								 <td>
-                 <a href="/admin/single_material_manage/<?php echo $val->id;?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>&nbsp;修改</a>
-                 <a href="javascript:void(0)" class="btn btn-danger btn-xs delete_configs" data_id="<?php echo $val->id;?>"><i class="fa fa-trash-o"></i>&nbsp;删除</a></td>
-							</tr>
-						<?php }?>
+          							<tr>
+          								 <td><?php echo $val->title;?></td>
+          								 <td><img src="<?php echo $val->coverurl;?>" width="50"></td>
+          								 <td><?php echo $val->keywords;?></td>
+          								 <td><?php echo $val->source_url;?></td>
+          								 <td>
+                           <a href="/admin/single_material_manage/<?php echo $val->id;?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>&nbsp;修改</a>
+                           <a href="javascript:void(0)" class="btn btn-danger btn-xs delete_configs" data_id="<?php echo $val->id;?>"><i class="fa fa-trash-o"></i>&nbsp;删除</a></td>
+          							</tr>
+          						<?php }?>
 
                     </tbody>
                   </table>

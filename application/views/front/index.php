@@ -115,9 +115,9 @@
         <!-- banner start -->
       <div class="flexslider" style="width:100%;height:100%">
       	<ul class="slides">
-      		<li><img src="/static/images/backgrounds/1.jpg" /></li>
-      		<li><img src="/static/images/backgrounds/2.jpg" /></li>
-      		<li><img src="/static/images/backgrounds/3.jpg" /></li>
+          <?php foreach ($bg_imgs as $key => $value) {?>
+            	<li><img src="<?php echo $value->field_one;?>" /></li>
+      <?php    }?>
       	</ul>
       </div>
 

@@ -26,7 +26,7 @@
           								 <td><?php echo $val->name;?></td>
           								 <td><?php echo $val->mobile;?></td>
           								 <td><?php echo $val->instrument;?></td>
-          								 <td><a href="/admin/branch_add/<?php echo $val->id;?>" class="btn btn-info btn-xs"><i class="fa fa-print"></i>&nbsp;打印</a>
+          								 <td>
           								     <a href="javascript:void(0)" class="btn btn-danger btn-xs delete_configs" data_id="<?php echo $val->id;?>"><i class="fa fa-trash-o"></i>&nbsp;删除</a></td>
           							</tr>
           						<?php }?>

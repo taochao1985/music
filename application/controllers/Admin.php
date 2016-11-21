@@ -14,6 +14,26 @@ class Admin extends CI_Controller {
         $this->load->library('zip');
     }
 
+    function save_index_bg(){
+      $img_url = trim($_POST['img_url']);
+      $insert_data = array('field_one'=>$img_url,'type'=>'index_bg');
+      $re = $this->music->insert('configs',$insert_data);
+
+      if ($re){
+        $result = array('success'=>'yes','msg'=>'操作成功');
+      }else{
+        $result = array('success'=>'no');
+      }
+      echo json_encode($result);exit;
+    }
+
+
+    function index_bg_list(){
+      $imgs = $this->music->select('configs','*',array('type'=>'index_bg'));
+      $data['imgs'] = $imgs;
+      $this->load->view('admin/index_bg_list',$data);
+    }
+
     function student_comments(){
         $sql = "select class.numbe,class_course_teacher.lession_no,class_roll_call.homework_comment,student.name as student_name,teacher.name as teacher_name from teacher,student,class_roll_call";
         $sql.= ",class,class_course_teacher where class.id = class_roll_call.class_id and student.id = class_roll_call.student_id and ";
