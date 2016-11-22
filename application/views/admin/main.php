@@ -56,7 +56,7 @@
       <div class="" style="width:100%;height:100%;position:absolute;">
 
       <!-- /top navigation -->
-        <iframe frameborder="0" id="main" name="main" src="/admin/wechat_config" ></iframe>
+        <iframe frameborder="0" id="main" name="main"  ></iframe>
         </div>
       </div>
       <!-- /page content -->

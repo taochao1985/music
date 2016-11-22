@@ -14,17 +14,22 @@ class Admin extends CI_Controller {
         $this->load->library('zip');
     }
 
-    function save_index_bg(){
-      $img_url = trim($_POST['img_url']);
-      $insert_data = array('field_one'=>$img_url,'type'=>'index_bg');
-      $re = $this->music->insert('configs',$insert_data);
+    function index_bg_add(){
+      if($_POST){
+        $img_url = trim($_POST['img_url']);
+        $insert_data = array('field_one'=>$img_url,'type'=>'index_bg');
+        $re = $this->music->insert('configs',$insert_data);
 
-      if ($re){
-        $result = array('success'=>'yes','msg'=>'操作成功');
+        if ($re){
+          $result = array('success'=>'yes','msg'=>'操作成功');
+        }else{
+          $result = array('success'=>'no');
+        }
+        echo json_encode($result);exit;
       }else{
-        $result = array('success'=>'no');
+          $this->load->view('admin/index_bg_add');
       }
-      echo json_encode($result);exit;
+
     }
 
 
