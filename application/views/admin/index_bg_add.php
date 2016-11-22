@@ -57,7 +57,6 @@
           $("#coverurl").val(jsonData.fileUrl);
           $(".default-tip").hide();
         }
-
     });
   });
   $("#delImg").click(function(){

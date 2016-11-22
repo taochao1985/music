@@ -32,7 +32,6 @@ class Admin extends CI_Controller {
 
     }
 
-
     function index_bg_list(){
       $imgs = $this->music->select('configs','*',array('type'=>'index_bg'));
       $data['imgs'] = $imgs;

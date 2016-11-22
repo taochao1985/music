@@ -34,10 +34,9 @@
         </table>
       </div>
     </div>
-  </div> 
+  </div>
 
     <script src="/static/js/datatables/jquery.dataTables.min.js"></script>
-
     <script src="/static/js/datatables/dataTables.bootstrap.js"></script>
     <script src="/static/js/datatables/dataTables.fixedHeader.min.js"></script>
 <script>
