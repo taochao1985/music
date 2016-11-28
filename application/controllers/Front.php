@@ -45,7 +45,7 @@ class Front extends CI_Controller {
             $event_fields = 'en_name as name, en_desc as desc, event_img, id';
         }
 
-        $data['event_info'] = $this->music->select('event',$event_fields,array('event_type'=>0),'','',array('display_order'=>'asc'));
+        $data['event_info'] = $this->music->select('event',$event_fields,array('event_type'=>0),'','',array('display_order'=>'asc')); 
         $data['past_event_info'] = $this->music->select('event',$event_fields,array('event_type'=>1),'','',array('display_order'=>'asc'));
         $data['school_info'] = $this->music->select('branch',$school_fields,'','','',array('display_order'=>'asc'));
         $data['course_info'] = $this->music->select('course',$course_fields,'','','',array('display_order'=>'asc'));
@@ -281,7 +281,8 @@ class Front extends CI_Controller {
             }
 
             $sms = $this->music->_send_sms($mobile,$sms);
-              if($sms == 'success'){
+						echo '<pre>';print_r($sms);
+            if($sms == 'success'){
 
                 $code_data = array('tmc_mobile'=>$mobile,'tmc_code'=>$code,'tmc_created'=>time());
                 $r = $this->music->insert('mobile_codes',$code_data);

@@ -61,7 +61,10 @@ h4 span {
 	font-size: 35px;
 }
 .colored {
-	color: #FFC401;
+	color: #eb593c;
+}
+.pointer{
+	cursor: pointer;
 }
 a {
 	color: #333;
@@ -982,4 +985,10 @@ margin: 2px 5px 0;}
 }
 .tab-content > .tab-pane{
     padding:10px;
+}
+.album_gallery {
+	margin-bottom: 20px;
+}
+.album_gallery a img{
+	max-width: 200px;
 }
