@@ -338,7 +338,18 @@
                     <div class="col-md-12">
 
                         <h1 id="event_brief" class="title text-center"><?php echo $this->lang->line('event_brief');?></h1>
-                        <ul>
+                        <div class="bs-example bs-example-tabs">
+                           <ul class="myTab nav nav-tabs" role="tablist">
+                             <li role="presentation" class="active" ><a href="#current_event" id="current_event-tab" role="tab" data-toggle="tab" aria-controls="current_event" aria-expanded="true">
+                               <?php echo $this->lang->line('event_brief');?>
+                             </a></li>
+                             <li role="presentation" ><a href="#past_event" id="past_event-tab" role="tab" data-toggle="tab" aria-controls="past_event" aria-expanded="true">
+                               <?php echo $this->lang->line('past_event');?>
+                             </a></li>
+                           </ul>
+                        <div id="event_brief_main" class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in " id="current_event" aria-labelledby="current_event-tab">
+                          <ul>
                           <?php if($event_info) { foreach($event_info as $k=>$v){?>
         									    <li class="pointer">
 
@@ -375,7 +386,51 @@
                                 </div>
                               </li>
                           <?php }}?>
-        								</ul>
+                          </ul>
+        								</div>
+
+                          <div role="tabpanel" class="tab-pane fade  " id="past_event" aria-labelledby="past_event-tab">
+                            <ul>
+                            <?php if($past_event_info) { foreach($past_event_info as $k=>$v){?>
+          									    <li class="pointer">
+
+                                  <div class="image-box" data-toggle="modal" data-target="#event_brief-<?php echo $v->id;?>">
+                                    <i class="fa fa-arrow-circle-right pr-10 colored"></i>
+                                     <?php echo $v->name;?>
+                                  </div>
+                                  <!-- Modal -->
+                                  <div class="modal fade" id="event_brief-<?php echo $v->id;?>" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
+                                      <div class="modal-dialog modal-lg">
+                                          <div class="modal-content">
+                                              <div class="modal-header">
+                                                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                  <h4 class="modal-title" id="event_brief-<?php echo $v->id;?>-label"><?php echo $v->name;?></h4>
+                                              </div>
+                                              <div class="modal-body">
+
+                                                  <div class="row">
+                                                      <div class="col-md-12">
+                                                         <div class="album_gallery">
+                                                          <?php if($v->event_img){  $event_imgs = explode(';',$v->event_img); foreach($event_imgs as $key=>$value) {?>
+                                                            <a href="<?php echo $value;?>" <?php if($key != 0) {?>class="hidden" <?php }?>><img src="<?php echo $value;?>" /></a>
+                                                          <?php } }?>
+                                                        </div>
+                                                          <div><?php echo $v->desc;?></div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="modal-footer">
+                                                  <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                </li>
+                            <?php }}?>
+                          </ul>
+          								</div>
+                      </div>
+                      </div>
                     </div>
                 </div>
             </div>
