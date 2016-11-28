@@ -25,7 +25,7 @@
                       </div>
                     </div>
                     <div class="item form-group">
-                      <label class="control-label col-md-2 col-sm-2 col-xs-12">活动照片</label>
+                      <label class="control-label col-md-2 col-sm-2 col-xs-12">活动照片（尺寸随意）</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="cover-area">
                           <div class="cover-hd">

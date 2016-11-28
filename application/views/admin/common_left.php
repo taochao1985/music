@@ -52,12 +52,13 @@
                     </li>
                     <li><a href="/admin/multiply_list">多图文消息</a>
                     </li>
-                    <li><a href="/admin/index_bg_list">首页背景图设置</a>
-                    </li>
+
                   </ul>
                 </li>
                 <li><a><i class="fa fa-user"></i> 基础信息管理 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
+                    <li><a href="/admin/index_bg_list">首页背景图设置</a>
+                    </li>
                     <li><a href="/admin/listen_list">试听列表</a>
                     </li>
                     <li><a href="/admin/branch_list">教学点列表</a>

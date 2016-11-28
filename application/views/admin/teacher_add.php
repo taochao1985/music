@@ -108,12 +108,13 @@
                       </div>
                     </div>
                     <div class="item form-group">
-							<label class="control-label col-md-2 col-sm-2 col-xs-12">头像</label>
+							<label class="control-label col-md-2 col-sm-2 col-xs-12">头像（263*175）</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
 								<div class="cover-area">
 									<div class="cover-hd">
 										<input id="file_upload" class="file_upload" name="file_upload" type="file" />
 										<input id="coverurl" value="<?php if ($teacher){ echo $teacher->thumb;}?>" name="coverurl" type="hidden" />
+
 									</div>
 									<p id="imgArea" class="cover-bd" <?php if(!$teacher){?>style="display: none;"<?php }?>>
 									<img src="<?php if ($teacher){ echo $teacher->thumb;}?>" id="img">
