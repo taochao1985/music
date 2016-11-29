@@ -663,6 +663,8 @@ background: #fff;border: 1px solid #fff;}
     border-left: none;
     margin: 0;
     color: #2B2B2B;
+		max-height: 493px;
+		overflow: hidden;
 }
 
 .item blockquote img {
