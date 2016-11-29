@@ -121,32 +121,22 @@
       </div>
 
 <!-- section start -->
+<?php if($recommand_ourse_info){?>
         <section class="section transprant-bg pclear secPadding">
             <div class="container no-view" data-animation-effect="fadeIn">
                 <h1 id="services" class="title text-center">推荐</h1>
                 <div class="space"></div>
                 <div class="row custom_recommandation">
+                  <?php foreach ($recommand_ourse_info as $key => $value) {?>
                     <div class="col-md-3">
-                        <img src="/asset/images/free_listen_1.jpg" class="img-circle">
-                        <div class="title hidden"><a>免费试听课</a></div>
+                        <a href="javascript:void(0)" data_id="<?php echo $value->id;?>" ><img src="<?php echo $value->recommand_pic;?>" class="recommand_course"></a>
                     </div>
-                    <div class="col-md-3">
-                        <img src="/asset/images/free_listen.jpg" class="img-circle">
-                        <div class="title hidden"><a>冬夏令营</a></div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="/asset/images/normal_course.jpg" class="img-circle">
-                        <div class="title hidden"><a>常规课程</a></div>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="/asset/images/events.jpg" class="img-circle">
-                        <div class="title hidden"><a>精彩活动</a></div>
-                    </div>
-
+                    <?php } ?>
                 </div>
 
             </div>
         </section>
+<?php  } ?>
         <!-- section end -->
 
         <!-- section start -->
@@ -264,7 +254,7 @@
                     <div class="col-md-12">
                         <h1 id="course_brief" class="title text-center"><?php echo $this->lang->line('course_brief');?></h1>
                          <div class="bs-example bs-example-tabs">
-                            <ul class="myTab nav nav-tabs" role="tablist">
+                            <ul class="myTab nav nav-tabs" role="tablist" id="course_info_tabs">
                             <?php if($course_info) { foreach($course_info as $k=>$v){?>
                               <li role="presentation" <?php if($k==0){?>class="active" <?php }else{ ?>class=""<?php }?>><a href="#course_info<?php echo $v->id;?>" id="course_info<?php echo $v->id;?>-tab" role="tab" data-toggle="tab" aria-controls="course_info<?php echo $v->id;?>" aria-expanded="true"><?php echo $v->name;?></a></li>
                             <?php }} ?>
@@ -437,207 +427,6 @@
         </section>
         <!-- section end -->
 
-
-        <!-- section start -->
-        <div class="colord secPadding" style="display:none;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="text-center">Amazing Free Bootstrap Template.</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- section end -->
-<section class="section secPadding" id="team" style="display:none;">
-<div class="container">
-<h1 class="text-center title">Our Team</h1>
-                <div class="separator"></div>
-                <p class="lead text-center">Lorem ipsum dolor sit amet laudantium molestias simiut laboriosam.</p>
-                <br>
-<div class="row">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="col-xs-6 col-sm-3">
-                  <div class="team__item">
-                    <div class="team-item__img">
-                      <img src="/asset/images/team1.jpg" class="img-responsive" alt="...">
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="team-item__name">John Doe</div>
-                        <div class="team-item__position">General Manager</div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="team-item__contact">
-                          <a class="team-item-contact__link" href="#">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                          <a class="team-item-contact__link team-item-contact__link_facebook" href="#">
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                          <div class="clearfix"></div>
-                        </div>
-                      </div>
-                    </div> <!-- / .row -->
-                  </div> <!-- / .team__item -->
-                </div>
-
-                <div class="col-xs-6 col-sm-3">
-                  <div class="team__item">
-                    <div class="team-item__img">
-                      <img src="/asset/images/team2.jpg" class="img-responsive" alt="...">
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="team-item__name">Mike Wilson</div>
-                        <div class="team-item__position">UI/UX Designer</div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="team-item__contact">
-                          <a class="team-item-contact__link" href="#">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                          <a class="team-item-contact__link team-item-contact__link_facebook" href="#">
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                          <div class="clearfix"></div>
-                        </div>
-                      </div>
-                    </div> <!-- / .row -->
-                  </div> <!-- / .team__item -->
-                </div>
-
-                <div class="col-xs-6 col-sm-3">
-                  <div class="team__item">
-                    <div class="team-item__img">
-                      <img src="/asset/images/team3.jpg" class="img-responsive" alt="...">
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="team-item__name">Vintel Mills</div>
-                        <div class="team-item__position">Project Manager</div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="team-item__contact">
-                          <a class="team-item-contact__link" href="#">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                          <a class="team-item-contact__link team-item-contact__link_facebook" href="#">
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                          <div class="clearfix"></div>
-                        </div>
-                      </div>
-                    </div> <!-- / .row -->
-                  </div> <!-- / .team__item -->
-                </div>
-
-                <div class="col-xs-6 col-sm-3">
-                  <div class="team__item">
-                    <div class="team-item__img">
-                      <img src="/asset/images/team4.jpg" class="img-responsive" alt="...">
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="team-item__name">James Resll</div>
-                        <div class="team-item__position">Software Developer</div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="team-item__contact">
-                          <a class="team-item-contact__link" href="#">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                          <a class="team-item-contact__link team-item-contact__link_facebook" href="#">
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                          <div class="clearfix"></div>
-                        </div>
-                      </div>
-                    </div> <!-- / .row -->
-                  </div> <!-- / .team__item -->
-                </div>
-
-              </div> <!-- / .row -->
-            </div>
-
-          </div>
-</div>
-</section>
-
-<!-- section start -->
-        <section class="default-bg secPadding">
-
-<div class="container" style="display:none;">
-  <div class="row">
-    <div class='col-md-offset-2 col-md-8 text-center'>
-    <h2>Clients Testimonials</h2>
-    </div>
-  </div>
-  <div class='row'>
-    <div class='col-md-offset-2 col-md-8'>
-      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
-        <!-- Bottom Carousel Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
-          <li data-target="#quote-carousel" data-slide-to="1"></li>
-          <li data-target="#quote-carousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Carousel Slides / Quotes -->
-        <div class="carousel-inner">
-
-          <!-- Quote 1 -->
-          <div class="item active">
-            <blockquote>
-              <div class="row">
-                <div class="col-sm-3 text-center">
-                  <img class="img-circle" src="/asset/images/kolage.jpg" style="width: 100px;height:100px;">
-                </div>
-                <div class="col-sm-9">
-                  <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!</p>
-                  <small>Someone famous</small>
-                </div>
-              </div>
-            </blockquote>
-          </div>
-          <!-- Quote 2 -->
-          <div class="item">
-            <blockquote>
-              <div class="row">
-                <div class="col-sm-3 text-center">
-                  <img class="img-circle" src="/asset/images/mijustin.jpg" style="width: 100px;height:100px;">
-                </div>
-                <div class="col-sm-9">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor nec lacus ut tempor. Mauris.</p>
-                  <small>Someone famous</small>
-                </div>
-              </div>
-            </blockquote>
-          </div>
-          <!-- Quote 3 -->
-          <div class="item">
-            <blockquote>
-              <div class="row">
-                <div class="col-sm-3 text-center">
-                  <img class="img-circle" src="/asset/images/keizgoesboom.jpg" style="width: 100px;height:100px;">
-                </div>
-                <div class="col-sm-9">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum elit in arcu blandit, eget pretium nisl accumsan. Sed ultricies commodo tortor, eu pretium mauris.</p>
-                  <small>Someone famous</small>
-                </div>
-              </div>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-        </section>
-
-
-
         <!-- footer start -->
         <footer id="footer">
 
@@ -797,6 +586,14 @@
         <script type="text/javascript" src="/asset/js/custom.js"></script><script type="text/javascript">
 
         $(document).ready(function(){
+          $(".recommand_course").click(function(){
+            var course_id = $(this).parents('a').attr('data_id');
+            var course_top = $("#course_info_tabs").offset().top-100;
+            document.body.scrollTop = course_top;
+            document.documentElement.scrollTop = course_top;
+            $("#course_info_tabs a[href='#course_info"+course_id+"']").tab('show');
+          })
+
           $('.venobox').venobox();
           $(".flexslider").flexslider({
       			slideshowSpeed: 4000, //展示时间间隔ms

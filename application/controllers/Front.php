@@ -41,6 +41,7 @@ class Front extends CI_Controller {
             $brief_info_field = 'en_desc as desc';
             $base_field = 'en_name as display_name,en_name,id';
             $teacher_fields = 'en_name  as name,en_desc as desc,thumb,instrument,id,en_country as country';
+						$course_fields = 'en_name as name, en_desc as desc, recommand_pic, display_order,id,en_pdf as pdf,en_pdf_name as pdf_name';
             $school_fields = 'en_name as name, en_desc as desc, email, en_address as address,id,phone';
             $event_fields = 'en_name as name, en_desc as desc, event_img, id';
         }
@@ -48,8 +49,10 @@ class Front extends CI_Controller {
         $data['event_info'] = $this->music->select('event',$event_fields,array('event_type'=>0),'','',array('display_order'=>'asc'));
 
         $data['past_event_info'] = $this->music->select('event',$event_fields,array('event_type'=>1),'','',array('display_order'=>'asc'));
-			
+
         $data['school_info'] = $this->music->select('branch',$school_fields,'','','',array('display_order'=>'asc'));
+				$data['recommand_ourse_info'] = $this->music->select('course',$course_fields,array('is_top'=>1),'','',array('display_order'=>'asc'));
+
         $data['course_info'] = $this->music->select('course',$course_fields,'','','',array('display_order'=>'asc'));
         $data['instrument'] = $this->music->select('base_info',$base_field,array('type' => 'instrument'));
 				$data['bg_imgs'] = $this->music->select('configs','*',array('type'=>'index_bg'));

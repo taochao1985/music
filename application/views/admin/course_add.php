@@ -76,7 +76,7 @@
                                 </div>
                                 <p class="imgArea" class="cover-bd" <?php if(!$course){?>style="display: none;"<?php }?>>
                                 <img src="<?php if ($course){ echo $course->recommand_pic;}?>" class="img">
-                                <a href="javascript:;" class="vb cover-del" class="delImg">删除</a>
+                                <a href="javascript:void(0)" class="vb cover-del delImg">删除</a>
                                 </p>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                                 </div>
                                 <p class="imgArea" class="cover-bd" <?php if(!$course){?>style="display: none;"<?php }?>>
                                 <img src="<?php if ($course){ echo $course->en_recommand_pic;}?>" class="img">
-                                <a href="javascript:;" class="vb cover-del" class="delImg">删除</a>
+                                <a href="javascript:;" class="vb cover-del delImg">删除</a>
                                 </p>
                             </div>
                         </div>
@@ -173,11 +173,10 @@
         });
 
      $(".delImg").click(function(){
-         $(".default-tip").show();
          var p = $(this).parents(".cover-area");
-         p.find('.imgArea').hide();
+         p.find('.imgArea').find("img").attr("src",'');
          p.find(".hidden_input,.file_name").val('');
-         $(".cover .i-img").hide();
+         $(this).hide();
      });
 
     $('form').submit(function(e) {
