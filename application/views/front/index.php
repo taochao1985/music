@@ -327,7 +327,7 @@
                 <div class="row">
                     <div class="col-md-12">
 
-                        <h1 id="event_brief" class="title text-center"><?php echo $this->lang->line('event_brief');?></h1>
+                        <h1 id="event_brief" class="title text-center"><?php echo $this->lang->line('studio_introduction');?></h1>
                         <div class="bs-example bs-example-tabs">
                            <ul class="myTab nav nav-tabs" role="tablist">
                              <li role="presentation" class="active" ><a href="#current_event" id="current_event-tab" role="tab" data-toggle="tab" aria-controls="current_event" aria-expanded="true">
