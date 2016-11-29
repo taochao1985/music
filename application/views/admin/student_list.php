@@ -63,7 +63,7 @@
       <tr>
         <td class="col-md-2">姓名</td>
         <td id="realname" class="col-md-4"></td>
-        <td class="col-md-2">姓名</td>
+        <td class="col-md-2">性别</td>
         <td id="sex" class="col-md-4"></td>
       </tr>
       <tr>
