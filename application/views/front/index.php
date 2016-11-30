@@ -155,7 +155,7 @@
                             <div id="myTabContent" class="tab-content">
                               <div role="tabpanel" class="tab-pane fade" id="school" aria-labelledby="school-tab">
                                  <div class="row">
-                                      <?php echo $school_brief[0]->desc;?>
+                                      <?php if($school_brief){ echo $school_brief[0]->desc; }?>
                                  </div>
                               </div>
                               <div role="tabpanel" class="tab-pane fade  active in" id="teachers" aria-labelledby="teachers-tab">
@@ -232,10 +232,10 @@
 
                               </div>
                               <div role="tabpanel" class="tab-pane fade" id="student_words" aria-labelledby="student_words-tab">
-                                    <div class="row"><?php echo $student_words[0]->desc;?></div>
+                                    <div class="row"><?php if($student_words){ echo $student_words[0]->desc; }?></div>
                               </div>
                               <div role="tabpanel" class="tab-pane fade" id="parents_words" aria-labelledby="parents_words-tab">
-                                <div class="row"><?php echo $parents_words[0]->desc;?></div>
+                                <div class="row"><?php if($parents_words){ echo $parents_words[0]->desc; }?></div>
                               </div>
 
                             </div>
@@ -345,7 +345,7 @@
                               <ol class="carousel-indicators">
                                 <?php foreach($event_info as $k=>$v){ ?>
                                 <li data-target="#quote-carousel" data-slide-to="<?php echo $k;?>" <?php if($k == 0){ ?>class="active" <?php } ?>></li>
-                                <?php } ?> 
+                                <?php } ?>
                               </ol>
 
                                 <!-- Carousel Slides / Quotes -->
