@@ -645,12 +645,12 @@ background: #fff;border: 1px solid #fff;}
 /* Changes the color of the indicators */
 #quote-carousel .carousel-indicators li
 {
-  background: #FFFFFF;
+  background: #333;
 }
 #quote-carousel .carousel-indicators .active
 {
-  background: #333333;
-  border: 1px solid #333;
+  background: #eb593c;
+  border: 1px solid #eb593c;
 }
 #quote-carousel img
 {

@@ -40,7 +40,7 @@
 		});
 
 	   $('#quote-carousel').carousel({
-		 pause: true,
+		 pause: 'hover',
 		 interval: 4000,
 	   });
 		//Scroll Spy

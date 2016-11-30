@@ -339,17 +339,18 @@
                            </ul>
                         <div id="event_brief_main" class="tab-content">
                           <div role="tabpanel" class="tab-pane fade active in " id="current_event" aria-labelledby="current_event-tab">
+                            <?php if($event_info) { ?>
                             <div class="carousel slide" data-ride="carousel" id="quote-carousel">
                             <!-- Bottom Carousel Indicators -->
                               <ol class="carousel-indicators">
-                                <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#quote-carousel" data-slide-to="1"></li>
-                                <li data-target="#quote-carousel" data-slide-to="2"></li>
+                                <?php foreach($event_info as $k=>$v){ ?>
+                                <li data-target="#quote-carousel" data-slide-to="<?php echo $k;?>" <?php if($k == 0){ ?>class="active" <?php } ?>></li>
+                                <?php } ?> 
                               </ol>
 
                                 <!-- Carousel Slides / Quotes -->
                                 <div class="carousel-inner">
-                                  <?php if($event_info) { foreach($event_info as $k=>$v){ ?>
+                                  <?php foreach($event_info as $k=>$v){ ?>
                                       <!-- Quote 1 -->
                                       <div class="item <?php if(!$k){ ?>active <?php }?>">
                                         <blockquote>
@@ -365,9 +366,10 @@
                                           </div>
                                         </blockquote>
                                       </div>
-                                    <?php } }?>
+                                    <?php } ?>
                                 </div>
                           </div>
+                          <?php } ?>
                        </div>
                           <div role="tabpanel" class="tab-pane fade" id="past_event" aria-labelledby="past_event-tab">
                             <ul>
