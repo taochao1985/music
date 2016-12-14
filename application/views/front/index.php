@@ -431,7 +431,9 @@
 
                         <div class="col-sm-12">
                             <div class="footer-content">
-                            <img src="http://www.rollingmusic.cn/images/page6-pic-1.jpg" style="width:100%" />
+                            <?php if($bottom_content){
+                              echo $bottom_content[0]->field_one;
+                            }?>
                                 <!--form method="POST" role="form" id="footer-form" action="contactengine.php" onSubmit="alert('Thank you for your feedback!');">
                                     <div class="form-group has-feedback">
                                         <label class="sr-only" for="name2">Name</label>
