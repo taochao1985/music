@@ -1162,6 +1162,39 @@ class Admin extends CI_Controller {
         }
     }
 
+    function index_bottom(){
+        $this->top();
+        if($_POST){
+            $config = $this->music->select('configs','*',array('type'=>'index_bottom'));
+            $content = trim($_POST['content']);
+            $data_array = array('type'=>'index_bottom','field_one'=>$content);
+            if ($config){
+                $re = $this->music->update('configs',$data_array,array('type'=>'index_bottom'));
+            }else{
+                $re = $this->music->insert('configs',$data_array);
+
+            }
+            if ($re){
+                $result = array('success'=>'yes','msg'=>'操作成功');
+            }else{
+                $result = array('success'=>'no');
+            }
+            echo json_encode($result);exit;
+
+        }else{
+            $config = $this->music->select('configs','*',array('type'=>'index_bottom'));
+
+            if($config){
+                $data['config'] = $config[0];
+            }else{
+                $data['config'] = '';
+            }
+
+            $this->load->view('admin/index_bottom',$data);
+        }
+    }
+
+
     function wechat_config(){
         $this->top();
         if($_POST){

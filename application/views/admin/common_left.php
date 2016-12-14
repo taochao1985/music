@@ -44,6 +44,8 @@
                   <ul class="nav child_menu" <?php if(!in_array($method, $setting_array)){?>style="display: none" <?php }?>>
                     <li><a href="/admin/wechat_config">基础设置</a>
                     </li>
+                    <li><a href="/admin/index_bottom">首页地址配置</a>
+                    </li>
                     <li><a href="/admin/menu_settings_index">自定义菜单</a>
                     </li>
                     <li><a href="/admin/first_follow">首次关注回复</a>
