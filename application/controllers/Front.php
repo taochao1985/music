@@ -50,7 +50,7 @@ class Front extends CI_Controller {
 				$data['bottom_content'] = $config;
         $data['event_info'] = $this->music->select('event',$event_fields,array('event_type'=>0),'','',array('display_order'=>'asc'));
 
-        $data['past_event_info'] = $this->music->select('event',$event_fields,array('event_type'=>1),'','',array('display_order'=>'asc'));
+        $data['past_event_info'] = $this->music->select('event',$event_fields,array('event_type'=>1),'','',array('display_order'=>'desc'));
 
         $data['school_info'] = $this->music->select('branch',$school_fields,'','','',array('display_order'=>'asc'));
 				$data['recommand_ourse_info'] = $this->music->select('course',$course_fields,array('is_top'=>1),'','',array('display_order'=>'asc'));
