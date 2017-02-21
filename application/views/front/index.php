@@ -112,7 +112,7 @@
         <!-- header end -->
 
         <!-- banner start -->
-      <div class="flexslider" style="width:100%;height:100%">
+      <div class="flexslider" style="width:100%;height:100%"  id="banner">
       	<ul class="slides">
           <?php foreach ($bg_imgs as $key => $value) {?>
             	<li><img src="<?php echo $value->field_one;?>" /></li>
@@ -132,11 +132,19 @@
                         <a href="javascript:void(0)" data_id="<?php echo $value->id;?>" ><img src="<?php echo $value->recommand_pic;?>" class="recommand_course"></a>
                     </div>
                     <?php } ?>
+                    <?php if($recommand_event_info){
+                        foreach ($recommand_event_info as $key => $value) { ?>
+                          <div class="col-md-3">
+                              <a href="javascript:void(0)" data_id="<?php echo $value->id;?>" ><img src="<?php echo $value->event_img;?>" class="event_click"></a>
+                          </div>
+                          <?php }
+                     } ?>
                 </div>
 
             </div>
         </section>
 <?php  } ?>
+
         <!-- section end -->
 
         <!-- section start -->
@@ -586,6 +594,14 @@
             document.body.scrollTop = course_top;
             document.documentElement.scrollTop = course_top;
             $("#course_info_tabs a[href='#course_info"+course_id+"']").tab('show');
+          })
+
+          $(".event_click").click(function(){
+            var course_id = $(this).parents('a').attr('data_id');
+            var course_top = $("#event_brief").offset().top-100;
+            document.body.scrollTop = course_top;
+            document.documentElement.scrollTop = course_top;
+            $("#event_brief").tab('show');
           })
 
           $('.venobox').venobox();

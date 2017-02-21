@@ -56,7 +56,13 @@
                         <input type="text" id="en_name" name="en_name" required="required" value="<?php if($event){echo $event->en_name;}?>" class="form-control col-md-7 col-xs-12">
                       </div>
                     </div>
-
+                    <div class="item form-group">
+                      <label class="control-label col-md-2 col-sm-2 col-xs-12" for="field_one">是否置顶
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="checkbox" id="is_top" name="is_top" <?php if($event&&$event->is_top){?> checked="checked" <?php }?> >
+                      </div>
+                    </div>
 
                     <div class="item form-group">
                     <label class="control-label col-md-2 col-sm-2 col-xs-12">课程内容(CH)</label>
@@ -143,6 +149,10 @@
 
       $form = $('#demo-form');
       if (submit){
+          var is_top = 0;
+            if($("#is_top").prop('checked')){
+              is_top = 1;
+            }
         var submitData={
             event_type:$("select[name='event_type']",$form).val(),
             name:$("input[name='name']",$form).val(),
@@ -151,7 +161,8 @@
             display_order:$("input[name='display_order']",$form).val(),
             desc:$.trim(desc.document.getBody().getHtml()),
             en_desc:$.trim(en_desc.document.getBody().getHtml()),
-            id:$("input[name='event_id']",$form).val()
+            id:$("input[name='event_id']",$form).val(),
+            is_top : is_top
         };
          $.post('/admin/event_add',submitData,function(data){
 

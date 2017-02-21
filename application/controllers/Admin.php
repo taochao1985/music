@@ -1703,7 +1703,7 @@ class Admin extends CI_Controller {
             $event_type = trim($_POST['event_type']);
             $event_url = trim($_POST['event_url']);
             $display_order = trim($_POST['display_order']);
-
+            $is_top = intval($_POST['is_top']);
             $data_array = array(
                                 'en_name'=>$en_name,
                                 'name'=>$name,
@@ -1711,6 +1711,7 @@ class Admin extends CI_Controller {
                                 'event_type'=>$event_type,
                                 'event_img'=>$event_url,
                                 'en_desc'=>$en_desc,
+                                'is_top'=>$is_top,
                                 'display_order'=>$display_order
                                 );
             if ($id){

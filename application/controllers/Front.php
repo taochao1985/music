@@ -53,8 +53,8 @@ class Front extends CI_Controller {
         $data['past_event_info'] = $this->music->select('event',$event_fields,array('event_type'=>1),'','',array('display_order'=>'desc'));
 
         $data['school_info'] = $this->music->select('branch',$school_fields,'','','',array('display_order'=>'asc'));
-				$data['recommand_ourse_info'] = $this->music->select('course',$course_fields,array('is_top'=>1),'','',array('display_order'=>'asc'));
-
+		$data['recommand_ourse_info'] = $this->music->select('course',$course_fields,array('is_top'=>1),'','',array('display_order'=>'asc'));
+		$data['recommand_event_info'] = $this->music->select('event',$event_fields,array('is_top'=>1),'','',array('display_order'=>'asc'));
         $data['course_info'] = $this->music->select('course',$course_fields,'','','',array('display_order'=>'asc'));
         $data['instrument'] = $this->music->select('base_info',$base_field,array('type' => 'instrument'));
 				$data['bg_imgs'] = $this->music->select('configs','*',array('type'=>'index_bg'));

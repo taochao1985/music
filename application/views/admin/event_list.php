@@ -19,6 +19,7 @@
                                     <th>活动名(CN)</th>
                                     <th>活动名(EN)</th>
                                     <th>排序（小的在前）</th>
+                                    <th>是否置顶</th>
                                     <th>操作</th>
                                   </tr>
                     </thead>
@@ -29,6 +30,7 @@
                                  <td><?php echo $val->name;?></td>
                                  <td><?php echo $val->en_name?></td>
                                  <td><?php echo $val->display_order;?></td>
+                                 <td><?php echo $val->is_top?'是':'否';?></td>
                                  <td><a href="/admin/event_add/<?php echo $val->id;?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>&nbsp;修改</a>
                                  <a href="javascript:void(0)" class="btn btn-danger btn-xs delete_configs" data_id="<?php echo $val->id;?>"><i class="fa fa-trash-o"></i>&nbsp;删除</a></td>
                             </tr>
