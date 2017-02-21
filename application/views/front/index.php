@@ -132,13 +132,9 @@
                         <a href="javascript:void(0)" data_id="<?php echo $value->id;?>" ><img src="<?php echo $value->recommand_pic;?>" class="recommand_course"></a>
                     </div>
                     <?php } ?>
-                    <?php if($recommand_event_info){
-                        foreach ($recommand_event_info as $key => $value) { ?>
-                          <div class="col-md-3">
-                              <a href="javascript:void(0)" data_id="<?php echo $value->id;?>" ><img src="<?php echo $value->event_img;?>" class="event_click"></a>
-                          </div>
-                          <?php }
-                     } ?>
+                  <div class="col-md-3">
+                      <a href="javascript:void(0)"  ><img src="/asset/images/events.jpg" class="event_click"></a>
+                  </div>
                 </div>
 
             </div>
