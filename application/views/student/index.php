@@ -22,18 +22,18 @@
                        <?php if($class_log){ foreach($class_log as $k=>$v){?>
                          <tr>
                            <td><?php echo $v->instrument_name;?>
-                             <?php if(!$v->homework_flag){?>
-                             <div class="ui-ribbon-wrapper">
-                                <div class="ui-ribbon">
-                                  new
-                                </div>
-                              </div>
-                              <?php }?>
                           </td>
                            <td><?php echo $v->lession_no;?></td>
 
                             <td>
-                            <a href="/student/course_detail/<?php echo $v->course_id;?>" class="btn-info btn-xs btn-extra"><i class="fa fa-search"></i>&nbsp;<?php echo $this->lang->line('detail_label');?></a>
+                                <a href="/student/course_detail/<?php echo $v->course_id;?>" class="btn-info btn-xs btn-extra"><i class="fa fa-search"></i>&nbsp;<?php echo $this->lang->line('detail_label');?></a>
+                                <?php if(!$v->homework_flag){?>
+                                <div class="ui-ribbon-wrapper">
+                                   <div class="ui-ribbon">
+                                     new
+                                   </div>
+                                 </div>
+                                 <?php }?>
                             </td>
 
                          </tr>
