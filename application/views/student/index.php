@@ -22,7 +22,7 @@
                        <?php if($class_log){ foreach($class_log as $k=>$v){?>
                          <tr>
                            <td><?php echo $v->instrument_name.'-----'.$v->homework_flag;?>
-                             <?php if($v->homework_flag==0){?>
+                             <?php if(intval($v->homework_flag)==0){?>
                              <div class="ui-ribbon-wrapper">
                                 <div class="ui-ribbon">
                                   new
