@@ -1,5 +1,5 @@
 <?php $this->load->view('student/student_header');?>
-    <div class="col-sm-10 col-xs-11 music-student-content">
+    <div class="col-sm-10 col-xs-10 music-student-content">
        <div class="x_panel">
                 <div class="x_title">
                   <h2><?php echo $this->lang->line('course_homework');?></h2>

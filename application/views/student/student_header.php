@@ -123,7 +123,7 @@
         <!-- header end -->
 
  <div class="container">
-            <ul class="col-sm-2 col-xs-1 nav child_menu music_menu_ul student_menu">
+            <ul class="col-sm-2 col-xs-2 nav child_menu music_menu_ul student_menu">
               <li <?php if($this->router->method =='index' || $this->router->method =='course_detail'){ ?>class="active" <?php }?>>
                 <a href="/student/index"><?php echo $this->lang->line('course_homework');?></a>
               </li>
