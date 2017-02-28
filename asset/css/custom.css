@@ -606,12 +606,13 @@ span.tag a {
   margin-bottom: 10px;
 }
 .table .ui-ribbon-wrapper {
-    position: absolute;
+    position: relative;
     overflow: hidden;
     width: 35px;
     height: 40px;
-    top: 37px;
-    right: -3px;
+    float: right;
+    top:-8px;
+    right: -8px;
 }
 .table .ui-ribbon {
     position: relative;
@@ -636,4 +637,3 @@ span.tag a {
 .to_do div{
   line-height: 30px;
 }
-
