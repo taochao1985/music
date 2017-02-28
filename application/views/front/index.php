@@ -90,7 +90,11 @@
                                                 <!--li><a href="#team">Team</a></li-->
                                                 <!--li><a href="#price">Price</a></li-->
                                                 <li><a href="#contact"><?php echo $this->lang->line('contact');?></a></li>
-                                                <li><a href="javascript:void(0)" style="padding-right:2px;float:left;"><span data-toggle="modal" data-target="#registerModal"><?php echo $this->lang->line('register');?></span></a><a href="javascript:void(0)" style="padding-left:2px;float:left;">/&nbsp;<span data-toggle="modal" data-target="#loginModal"><?php echo $this->lang->line('login');?></span></a></li>
+                                                <li>
+                                                    <a href="javascript:void(0)" style="padding-right:2px;float:left;"><span data-toggle="modal" data-target="#registerModal"><?php echo $this->lang->line('register');?></span></a>
+                                                    <a href="javascript:void(0)" style="padding-left:2px;float:left;">/&nbsp;<span data-toggle="modal" data-target="#loginModal"><?php echo $this->lang->line('login');?></span></a>
+                                                    <span style="clear:both"></span>
+                                                </li>
                                                 <li><a href="javascript:void(0)" id="change_language"><?php echo $this->lang->line('language_info');?></a></li>
                                             </ul>
                                         </div>
