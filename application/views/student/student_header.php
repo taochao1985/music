@@ -135,5 +135,18 @@
               <li <?php if($this->router->method =='payment_list'){ ?>class="active" <?php }?> style="display:none;">
                 <a href="/student/payment_list"><?php echo $this->lang->line('payment_list');?></a>
               </li>
+            </ul>
 
+            <ul class="col-sm-12 col-xs-12 nav child_menu music_menu_ul student_menu_mobile">
+              <li <?php if($this->router->method =='index' || $this->router->method =='course_detail'){ ?>class="active" <?php }?>>
+                <a href="/student/index"><?php echo $this->lang->line('course_homework');?></a>
+              </li>
+
+              <li <?php if($this->router->method =='my_course'){ ?>class="active" <?php }?>>
+                <a href="/student/my_course"><?php echo $this->lang->line('my_course');?></a>
+              </li>
+
+              <li <?php if($this->router->method =='payment_list'){ ?>class="active" <?php }?> style="display:none;">
+                <a href="/student/payment_list"><?php echo $this->lang->line('payment_list');?></a>
+              </li>
             </ul>

@@ -458,6 +458,9 @@ ul.to_do p {
 .student_menu {
     display: none;
 }
+.student_menu_mobile{
+    display: block;
+}
 .music-student-content{
     width: 100% !important;
 }
@@ -467,6 +470,9 @@ ul.to_do p {
 @media (min-width:1000px) {
   .student_menu {
     display: block;
+  }
+  .student_menu_mobile{
+      display: none;
   }
   .music-student-content{
     width: 83.333% !important;
