@@ -134,44 +134,7 @@ class Wechat extends CI_Controller
                                     case 'register':
                                          $resultStr = sprintf($singleImgTextTpl, $this->fromUsername, $this->toUsername, time(), '会员注册', '', base_url().'asset/images/logo.png', base_url().'front/wap_register/'.$this->fromUsername);
                                          break;
-                                    /*case '多图文':
-                                          $return_info = array(
-                                                          array('title'=>'多图文标题1','description'=>'多图文简介1','pic'=>'http://demo.legendtao1985.com/getheadimg.jpeg','url'=>'http://www.smm.cn'),
-                                                          array('title'=>'多图文标题2','description'=>'多图文简介2','pic'=>'http://demo.legendtao1985.com/1.jpeg','url'=>'http://www.smm.cn'),
-                                                          array('title'=>'多图文标题3','description'=>'多图文简介3','pic'=>'http://demo.legendtao1985.com/2.jpeg','url'=>'http://www.smm.cn'),
-                                                          array('title'=>'多图文标题4','description'=>'多图文简介4','pic'=>'http://demo.legendtao1985.com/3.jpeg','url'=>'http://www.smm.cn'),
-                                                          array('title'=>'多图文标题5','description'=>'多图文简介5','pic'=>'http://demo.legendtao1985.com/4.jpeg','url'=>'http://www.smm.cn')
-                                           );
 
-                                          $resultStr = $this->_get_mul_text_imgs($return_info);
-                                          break;
-                                    case 'token':
-                                          $access_token = $this->_get_access_token();
-                                          $msgType = "text";
-                                          $contentStr = $access_token;
-                                          $resultStr = sprintf($textTpl, $this->fromUsername, $this->toUsername, time(), $msgType, $contentStr);
-
-                                          break;
-
-                                    case '创建菜单':
-                                          $this->_create_wechat_menu();
-                                          break;
-
-                                    case 'get_menu':
-                                          $this->_get_wechat_menu();
-                                          $contentStr = 'Success';
-                                          $msgType = "text";
-                                          $resultStr = sprintf($textTpl, $this->fromUsername, $this->toUsername, time(), $msgType, $contentStr);
-
-                                          break;
-
-                                    case 'delete_menu':
-                                          $this->_delete_wechat_menu();
-                                          $contentStr = 'Success';
-                                          $msgType = "text";
-                                          $resultStr = sprintf($textTpl, $this->fromUsername, $this->toUsername, time(), $msgType, $contentStr);
-                                          break;
-                                    */
                                     case 'subscribe':
 
                                           $resultStr = $this->_subscribe();//$this->_singletext($this->fromUsername,$this->toUsername);//sprintf($textTpl, $this->fromUsername, $this->toUsername, time(), $msgType, $contentStr);

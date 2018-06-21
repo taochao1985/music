@@ -46,8 +46,8 @@ class Front extends CI_Controller {
             $event_fields = 'en_name as name, en_desc as desc, event_img, id';
         }
 
-				$config = $this->music->select('configs','*',array('type'=>'index_bottom'));
-				$data['bottom_content'] = $config;
+		$config = $this->music->select('configs','*',array('type'=>'index_bottom'));
+		$data['bottom_content'] = $config;
         $data['event_info'] = $this->music->select('event',$event_fields,array('event_type'=>0),'','',array('display_order'=>'asc'));
 
         $data['past_event_info'] = $this->music->select('event',$event_fields,array('event_type'=>1),'','',array('display_order'=>'desc'));

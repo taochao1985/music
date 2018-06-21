@@ -216,7 +216,7 @@ class Music extends CI_Model {
         }
 
         $query = $this->db->get($table);
-        $result = $query->result();
+        $result = $query->result(); 
         return $result;
     }
 
